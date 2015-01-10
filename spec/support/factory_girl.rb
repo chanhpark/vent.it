@@ -7,4 +7,15 @@ FactoryGirl.define do
     password_confirmation 'password'
   end
 
+  factory :vent do
+    title "Insecurities"
+    content "I may be a negative Nancy. But whenever
+             you go out with your friends to clubs, or
+             check out girls and tell me how hot they are…
+             I get really insecure. Like, the lowest of
+             lows of my insecurities. You may remind me
+             constantly of how beautiful you think I am,
+             but you prove to"
+  end
+
 end
