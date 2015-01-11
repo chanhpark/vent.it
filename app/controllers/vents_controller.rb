@@ -1,11 +1,12 @@
 class VentsController < ApplicationController
 
   def index
-    @vent = Vent.all.order("created_at DESC")
+    @vents = Vent.all.order("created_at DESC")
   end
 
   def show
     @vent = Vent.find(params[:id])
+    @comments = @vent.comments.order("created_at DESC")
   end
 
   def new

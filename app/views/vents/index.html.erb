@@ -1,0 +1,10 @@
+<% @vents.each do |vent| %>
+<div class="vent">
+Shared by anonymous
+  <%= time_ago_in_words(vent.created_at) %><br>
+Title:
+  <%= link_to vent.title, vent_path(vent) %><br>
+Vent:
+  <%= vent.content %>
+<% end %>
+</div>

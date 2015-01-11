@@ -1,0 +1,6 @@
+<p class="content">
+  <%= simple_form_for ([@vent, @vent.comments.build]) do |f| %>
+  <%= f.input :reply, label: "Reply with a comment" %>
+  <%= f.button :submit, class: "button" %>
+  <% end %>
+</p>
