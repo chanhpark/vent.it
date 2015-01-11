@@ -27,6 +27,22 @@
     </section>
   </nav>
 
+  <div class="row">
+    <div class="large-3 columns">
+      <h1>Vent.it</h1>
+    </div>
+    <div class="large-9 columns">
+      <ul class="right button-group">
+        <li><%= link_to "Add Vent", new_vent_path, class: "button" %></li>
+        <li><a href="#" class="button">Link 2</a></li>
+        <li><a href="#" class="button">Link 3</a></li>
+        <li><a href="#" class="button">Link 4</a></li>
+      </ul>
+    </div>
+  </div>
+
+
+
   <%- flash.each do |key, value| -%>
     <div class="flash flash-<%= key %>">
       <%= value %>
