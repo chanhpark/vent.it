@@ -18,9 +18,6 @@ class VentsController < ApplicationController
     if @vent.update(vent_params)
       redirect_to admin_vents_path
       flash[:notice] = "Your Vent has been successfully updated."
-    else
-      render :edit
-      flash[:notice] = "Please fill out the forms correctly."
     end
   end
 
@@ -31,13 +28,6 @@ class VentsController < ApplicationController
       redirect_to vent_path(@vent)
     else
       render "new"
-    end
-  end
-
-  def destroy
-    @vent = Vent.find(params[:id])
-    if @vent.destroy
-      redirect_to admin_path, notice: "Vent Deleted Successfully"
     end
   end
 
