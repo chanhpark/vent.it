@@ -12,6 +12,7 @@ feature "User updates a comment that they created", %{
   } do
     let :vent do
       FactoryGirl.create(:vent)
+      FactoryGirl.create(:vent, title: "UGH")
     end
 
     scenario "User updates a comment they own" do

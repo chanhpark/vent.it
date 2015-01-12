@@ -23,5 +23,5 @@
 
 <div class="random vent">
   Random Vent:
-  <%= link_to @random_vent.title, vents_path(@random_post) %>
+  <%= link_to @random_vent.title, vent_path(@random_vent) unless @random_vent == nil %>
 </div>

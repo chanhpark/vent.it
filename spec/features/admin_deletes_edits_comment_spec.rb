@@ -20,6 +20,9 @@ feature "Admin deletes and edits comments", %{
 
     let(:new_vent) do
       FactoryGirl.create(:vent)
+      FactoryGirl.create(:vent, title: "UGH")
+      FactoryGirl.create(:vent, title: "yeah")
+
     end
 
     scenario "admin visits vent's details" do
@@ -28,6 +31,7 @@ feature "Admin deletes and edits comments", %{
       fill_in "Email", with: user.email
       fill_in "Password", with: user.password
 
+      save_and_open_page
       click_button "Log in"
 
       visit vent_path(new_vent)
@@ -45,7 +49,6 @@ feature "Admin deletes and edits comments", %{
       fill_in "Password", with: admin_user.password
 
       click_button "Log in"
-
       visit vent_path(new_vent)
 
       expect(page).to have_content "Edit Comment"
