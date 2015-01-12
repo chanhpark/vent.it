@@ -11,10 +11,11 @@
       <div class="content">
         <p> <%= vent.content %> </p>
         <span class="count">
-      <%= vent.comments.count %> Comments
-    </span>
-
-
+          <%= vent.comments.count %> Comments
+        </span>
+        <span class="category">
+          <%= vent.category.name %>
+        </span>
   </div>
 </div>
 <% end %>
