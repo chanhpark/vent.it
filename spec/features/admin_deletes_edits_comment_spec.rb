@@ -11,11 +11,11 @@ feature "Admin deletes and edits comments", %{
   } do
 
     let(:user) do
-    FactoryGirl.create(:user)
+      FactoryGirl.create(:user)
     end
 
     let(:admin_user) do
-    FactoryGirl.create(:user, admin: true)
+      FactoryGirl.create(:user, admin: true)
     end
 
     let(:new_vent) do
@@ -29,7 +29,7 @@ feature "Admin deletes and edits comments", %{
       fill_in "Password", with: user.password
 
       click_button "Log in"
-
+      
       visit vent_path(new_vent)
 
       fill_in "Reply with a comment", with: "bad word"

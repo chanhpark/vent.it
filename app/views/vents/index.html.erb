@@ -1,4 +1,4 @@
-<div class="article">
+<div class="vent">
   <% @vents.each do |vent| %>
     <header>
       <h3>#<%= vent.id %> <%= link_to vent.title, vent_path(vent) %></h3>
@@ -13,9 +13,8 @@
         <span class="count">
       <%= vent.comments.count %> Comments
     </span>
-      <span class="category">
-      <%= vent.categories.name %>
-      </span>
+
+
   </div>
 </div>
 <% end %>

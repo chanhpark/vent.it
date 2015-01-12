@@ -34,7 +34,7 @@ class VentsController < ApplicationController
 private
 
   def vent_params
-    params.require(:vent).permit(:title, :content, :categories_id)
+    params.require(:vent).permit(:title, :content, :category_id)
   end
 
 

@@ -1,11 +1,16 @@
 require 'factory_girl'
 
 FactoryGirl.define do
+
   factory :user do
     sequence(:email) {|n| "user#{n}@example.com" }
     password 'password'
     password_confirmation 'password'
     admin false
+  end
+
+  factory :category do
+    sequence(:name) {|n| "miscellaneous #{n}"}
   end
 
   factory :vent do
@@ -17,5 +22,8 @@ FactoryGirl.define do
              lows of my insecurities. You may remind me
              constantly of how beautiful you think I am,
              but you prove to"
+
+    category
   end
+
 end
