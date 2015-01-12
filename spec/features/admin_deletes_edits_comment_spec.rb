@@ -29,7 +29,7 @@ feature "Admin deletes and edits comments", %{
       fill_in "Password", with: user.password
 
       click_button "Log in"
-      
+
       visit vent_path(new_vent)
 
       fill_in "Reply with a comment", with: "bad word"
