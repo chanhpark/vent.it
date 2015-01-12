@@ -1,4 +1,4 @@
-<%= form_for(@vent) do |f| %>
+<%= simple_form_for(@vent) do |f| %>
 <% if @vent.errors.any? %>
 <div id="error_explanation">
   <h2><%= pluralize(@vent.errors.count, "error") %> prohibited this site from being saved:</h2>
@@ -11,17 +11,9 @@
 </div>
 <% end %>
 <div class="field">
-  <%= f.label :title %><br/>
-  <%= f.text_field :title %>
+  <%= f.association :category %>
+  <%= f.input :title %><br />
+  <%= f.input :content %><br />
+  <%= f.submit class:"button" %><br />
 </div>
-<div class="field">
-  <%= f.label :content %><br/>
-  <%= f.text_field :content %>
-</div>
-
-<div class="form-group">
-  <%= f.submit class: "button round" %>
-</div>
-
-
 <% end %>

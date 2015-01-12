@@ -11,17 +11,11 @@
 </div>
 <% end %>
 <div class="field">
-  <%= f.label :title %><br/>
-  <%= f.text_field :title %>
+  <%= f.association :categorys %>
+  <%= f.input :title %><br />
+  <%= f.input :content %><br />
+  <%= f.submit class:"button" %><br />
 </div>
-<div class="field">
-  <%= f.label :content %><br/>
-  <%= f.text_field :content %>
-</div>
-
-<div class="form-group">
-  <%= f.submit class: "button round" %>
-</div>
-
+<% end %>
 
 <% end %>

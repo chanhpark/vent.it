@@ -10,7 +10,7 @@ feature "user creates Vent", %{
       vent = FactoryGirl.create(:vent)
       visit vents_path
       click_on "Add Vent"
-
+      select(vent.category.name)
       fill_in "Title", with: vent.title
       fill_in "Content", with: vent.content
 
@@ -27,6 +27,7 @@ feature "user creates Vent", %{
       click_on "Create Vent"
       expect(page).to have_content "Title can't be blank"
       expect(page).to have_content "Content can't be blank"
+      expect(page).to have_content "Category can't be blank"
 
     end
   end

@@ -11,11 +11,11 @@ feature "Admin deletes and edits comments", %{
   } do
 
     let(:user) do
-    FactoryGirl.create(:user)
+      FactoryGirl.create(:user)
     end
 
     let(:admin_user) do
-    FactoryGirl.create(:user, admin: true)
+      FactoryGirl.create(:user, admin: true)
     end
 
     let(:new_vent) do
