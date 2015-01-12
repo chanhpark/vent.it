@@ -11,7 +11,7 @@
     </p>
     Posted by <%= reply.user_id %> about <%= time_ago_in_words(reply.created_at) %> ago
     <% unless current_user == nil %>
-    <% if reply.user_id == current_user.id %>
+    <% if reply.user_id == current_user.id || current_user.admin = true  %>
     <div class="updates">
       <%= link_to "Edit Comment", edit_vent_comment_path(@vent, reply) %> |
       <%= link_to "Delete", vent_comment_path(@vent, reply), method: :delete, data: { confirm: "Are you sure?" } %>

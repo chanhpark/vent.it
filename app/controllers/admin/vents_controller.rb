@@ -1,16 +1,11 @@
-class VentsController < ApplicationController
+class Admin::VentsController < ApplicationController
 
   def index
-    @vents = Vent.all.order("created_at DESC")
+    @vents = Vent.all
   end
 
-  def show
+  def edit
     @vent = Vent.find(params[:id])
-    @comments = @vent.comments.order("created_at DESC")
-  end
-
-  def new
-    @vent = Vent.new
   end
 
   def update
@@ -24,28 +19,29 @@ class VentsController < ApplicationController
     end
   end
 
+  def new
+    @vent = Vent.new
+  end
+
   def create
     @vent = Vent.new(vent_params)
-    if @vent.save
-      flash[:notice] = "Vents been posted"
-      redirect_to vent_path(@vent)
-    else
-      render "new"
-    end
   end
 
   def destroy
     @vent = Vent.find(params[:id])
     if @vent.destroy
-      redirect_to admin_path, notice: "Vent Deleted Successfully"
+      flash[:notice] = "Vent successfully deleted"
+      redirect_to admin_vents_path
+    else
+      flash[:alert] = "Failed to delete vent"
+      redirect_to admin_vents_path
     end
   end
 
-private
+  private
 
   def vent_params
-    params.require(:vent).permit(:title, :content)
+    params.require(:vent).permit(:content)
   end
-
 
 end
