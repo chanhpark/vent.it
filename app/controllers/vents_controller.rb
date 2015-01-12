@@ -2,6 +2,7 @@ class VentsController < ApplicationController
 
   def index
     @vents = Vent.all.order("created_at DESC")
+    @random_vent = Vent.where(id: @vents).order("RANDOM()").first
   end
 
   def show
