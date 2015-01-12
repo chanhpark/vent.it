@@ -1,5 +1,4 @@
 class Admin::VentsController < ApplicationController
-
   def index
     @vents = Vent.all
   end
@@ -43,5 +42,4 @@ class Admin::VentsController < ApplicationController
   def vent_params
     params.require(:vent).permit(:content)
   end
-
 end
