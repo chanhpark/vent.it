@@ -5,6 +5,7 @@ FactoryGirl.define do
     sequence(:email) {|n| "user#{n}@example.com" }
     password 'password'
     password_confirmation 'password'
+    admin false
   end
 
   factory :vent do
@@ -17,5 +18,4 @@ FactoryGirl.define do
              constantly of how beautiful you think I am,
              but you prove to"
   end
-
 end

@@ -3,5 +3,10 @@ Rails.application.routes.draw do
   resources :vents do
     resources :comments
   end
+
+  namespace :admin do
+    resources :vents
+  end
+
   devise_for :users
 end
