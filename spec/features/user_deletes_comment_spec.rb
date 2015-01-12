@@ -26,18 +26,18 @@ feature "User deletes a comment", %{
       click_button "Log in"
 
       expect(page).to have_content("Signed in successfully")
-      expect(page).to have_content("Log out")
+      expect(page).to have_content("Sign Out")
 
       visit vent_path(vent)
       fill_in "Reply with a comment", with: "awesome!"
       click_on "Create Comment"
 
-      expect(page).to have_content "Successfully added your comment"
+      expect(page).to have_content "Comment has been posted"
       expect(page).to have_content "Delete"
 
       click_on "Delete"
 
-      expect(page).to have_content "Comment Deleted Successfully"
+      expect(page).to have_content "Deleted Successfully"
     end
     scenario "User should not see delete button if signed out" do
       user = FactoryGirl.create(:user)
@@ -52,13 +52,13 @@ feature "User deletes a comment", %{
       visit vent_path(vent)
       fill_in "Reply with a comment", with: "awesome!"
       click_on "Create Comment"
-      click_on "Log out"
+      click_on "Sign Out"
 
       visit vent_path(vent)
 
       expect(page).to_not have_content "Delete"
     end
-    scenario "User should not see delete button if they do not own the review" do
+    scenario "User should not see delete button if they do not own the comment" do
       user = FactoryGirl.create(:user)
 
       visit new_user_session_path
@@ -72,9 +72,10 @@ feature "User deletes a comment", %{
 
       fill_in "Reply with a comment", with: "awesome!"
       click_on "Create Comment"
-      click_on "Log out"
+      click_on "Sign Out"
 
-      sign_in_as(vent.user)
+
+      visit vent_path(vent)
 
       expect(page).to_not have_content "Delete"
     end
