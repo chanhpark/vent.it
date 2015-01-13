@@ -7,15 +7,6 @@ class Admin::VentsController < ApplicationController
     @vent = Vent.find(params[:id])
   end
 
-  def update
-    @vent = Vent.find(params[:id])
-    if @vent.update(vent_params)
-      redirect_to admin_vents_path
-      flash[:notice] = "Your Vent has been successfully updated."
-    end
-  end
-
-
   def create
     @vent = Vent.new(vent_params)
   end
