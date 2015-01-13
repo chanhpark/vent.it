@@ -1,0 +1,21 @@
+<div class="vent">
+  <% @vents.each do |vent| %>
+  <header>
+    <h3>#<%= vent.id %> <%= link_to vent.title, vent_path(vent) %></h3>
+    <div class="author">
+      <span>
+        Shared by Anonymous <%= time_ago_in_words(vent.created_at) %>
+      </span>
+    </div>
+  </header>
+  <div class="content">
+    <p> <%= vent.content %> </p>
+    <span class="count">
+      <%= vent.comments.count %> Comments
+    </span>
+    <span class="category">
+      <%= vent.category.name %>
+    </span>
+  </div>
+  <% end %>
+</div>

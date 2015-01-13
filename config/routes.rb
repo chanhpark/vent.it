@@ -4,6 +4,8 @@ Rails.application.routes.draw do
     resources :comments
   end
 
+  resources :categories, only: [:show]
+
   namespace :admin do
     resources :vents
   end
