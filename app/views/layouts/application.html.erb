@@ -20,8 +20,9 @@
       <section class="top-bar-section">
         <ul id="top" class="right">
           <%= link_to "Add Vent", new_vent_path, class: "button" %>
-          <%- if current_user -%>
+          <%- if user_signed_in? -%>
           <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
+          <li><%= link_to current_user.email, edit_user_registration_path %></li>
           <% if current_user.admin? %>
           <li><%= link_to "Admin", admin_vents_path  %></li>
           <% end %>
@@ -43,18 +44,22 @@
 
   <%= yield %>
 
+<%  unless @random_vent == nil %>
 <aside class="large-3 columns">
   <div class="random-vent">
     Random Vent:<br>
-      <%= link_to @random_vent.title, vent_path(@random_vent) unless @random_vent == nil %>
+      <%= link_to @random_vent.title, vent_path(@random_vent) %>
       <div class="categories">
         Categories<br>
+        <% if @categories %>
           <% @categories.each do |category| %>
           <li><%= link_to category.name, category_path(category) %></li>
           <% end %>
-      </div>
+        <% end %>
     </div>
-    
+  </div>
+<% end %>
+
   <%= javascript_include_tag 'application' %>
   <%= javascript_tag do %>
     $(function(){
@@ -64,6 +69,3 @@
   <%= yield :extra_footer %>
 </body>
 </html>
-
-
-  </html>

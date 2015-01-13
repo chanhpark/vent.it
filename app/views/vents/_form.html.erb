@@ -1,19 +1,29 @@
-<%= simple_form_for(@vent) do |f| %>
-<% if @vent.errors.any? %>
-<div id="error_explanation">
-  <h2><%= pluralize(@vent.errors.count, "error") %> prohibited this site from being saved:</h2>
-
-  <ul>
-    <% @vent.errors.full_messages.each do |message| %>
-    <li><%= message %></li>
-    <% end %>
-  </ul>
+<div class="col-md-8 col-md-offset-2">
+  <div class="row">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h2>Get it off your chest</h2>
+      </div>
+      <div class="panel-body">
+        <%= simple_form_for(@vent) do |f| %>
+        <% if @vent.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@vent.errors.count, "error") %> prohibited this site from being saved:</h2>
+          <ul>
+            <% @vent.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+        <div class="form-input">
+          <%= f.association :category %>
+          <%= f.input :title %><br />
+          <%= f.input :content %><br />
+          <%= f.submit class:"button" %><br />
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>
-<% end %>
-<div class="field">
-  <%= f.association :category %>
-  <%= f.input :title %><br />
-  <%= f.input :content %><br />
-  <%= f.submit class:"button" %><br />
-</div>
-<% end %>

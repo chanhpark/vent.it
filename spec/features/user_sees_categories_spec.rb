@@ -19,11 +19,12 @@ feature "user see a list of categories", %{
 
       visit root_path
 
-      click_on vent.category.name
+      link = vent.category.name
+      first(:link, link).click
 
       expect(page).to have_content "Insecurities"
-      expect(page).to_not have_content "Reply with a comment"
     end
+
     let(:user) do
       FactoryGirl.create(:user)
     end
@@ -40,11 +41,10 @@ feature "user see a list of categories", %{
 
       expect(page).to have_content("Signed in successfully")
       expect(page).to have_content("Sign Out")
-
-      click_on vent.category.name
+      link = vent.category.name
+      first(:link, link).click
 
       expect(page).to have_content "Insecurities"
-      expect(page).to_not have_content "Reply with a comment"
 
       click_on "Insecurities"
 
