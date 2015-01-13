@@ -1,6 +1,7 @@
 class Admin::VentsController < ApplicationController
   def index
     @vents = Vent.all
+    @categories = Category.all
   end
 
   def edit

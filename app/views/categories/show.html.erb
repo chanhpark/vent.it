@@ -1,21 +1,21 @@
-<div class="vent">
-  <% @vents.each do |vent| %>
-  <header>
-    <h3>#<%= vent.id %> <%= link_to vent.title, vent_path(vent) %></h3>
-    <div class="author">
-      <span>
+<div class="large-8 column">
+  <div class="content">
+    <% @vents.each do |vent| %>
+    <header>
+      <h3 class="entry-title"> #<%= vent.id %> <%= link_to vent.title, vent_path(vent) %></h3>
+      <div class="post-author">
         Shared by Anonymous <%= time_ago_in_words(vent.created_at) %>
+      </div>
+    </header>
+    <div class="post">
+      <p> <%= vent.content %> </p>
+      <span class="count">
+        <%= link_to vent.comments.count, vent_path(vent) %> Comments |
+      </span>
+      <span class="category">
+        <%= link_to vent.category.name, vent_path(vent) %>
       </span>
     </div>
-  </header>
-  <div class="content">
-    <p> <%= vent.content %> </p>
-    <span class="count">
-      <%= vent.comments.count %> Comments
-    </span>
-    <span class="category">
-      <%= vent.category.name %>
-    </span>
+    <% end %>
   </div>
-  <% end %>
 </div>

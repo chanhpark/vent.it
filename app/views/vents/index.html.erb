@@ -1,32 +1,21 @@
-<div class="vent">
-  <% @vents.each do |vent| %>
-    <header>
-      <h3>#<%= vent.id %> <%= link_to vent.title, vent_path(vent) %></h3>
-        <div class="author">
-          <span>
-            Shared by Anonymous <%= time_ago_in_words(vent.created_at) %>
-          </span>
-        </div>
-    </header>
-      <div class="content">
-        <p> <%= vent.content %> </p>
+<div class="large-8 column">
+  <div class="content">
+    <% @vents.each do |vent| %>
+  <header>
+    <h3 class="entry-title"> #<%= vent.id %> <%= link_to vent.title, vent_path(vent) %></h3>
+      <div class="post-author">
+        Shared by Anonymous <%= time_ago_in_words(vent.created_at) %>
+      </div>
+  </header>
+    <div class="post">
+      <p> <%= vent.content %> </p>
         <span class="count">
-          <%= vent.comments.count %> Comments
+          <%= link_to vent.comments.count, vent_path(vent) %> Comments |
         </span>
         <span class="category">
-          <%= vent.category.name %>
+          <%= link_to vent.category.name, vent_path(vent) %>
         </span>
+      </div>
+    <% end %>
   </div>
-<% end %>
-</div>
-
-
-<div class="random vent">
-  Random Vent:
-  <%= link_to @random_vent.title, vent_path(@random_vent) unless @random_vent == nil %>
-</div>
-<div class="categories">
- <% @categories.each do |category| %>
- <li><%= link_to category.name, category_path(category) %></li>
- <% end %>
 </div>

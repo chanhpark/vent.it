@@ -9,6 +9,7 @@ class VentsController < ApplicationController
   def show
     @vent = Vent.find(params[:id])
     @comments = @vent.comments.order("created_at DESC")
+    @categories = Category.all
   end
 
   def new

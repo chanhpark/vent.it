@@ -1,7 +1,23 @@
-<h1> <%= @vent.title  %> </h1>
-<div class="content">
-  <%= @vent.content %>
-</div>
+<div class="large-8 column">
+  <div class="content">
+    <header>
+      <h3 class="entry-title"> #<%= @vent.id %> <%= link_to @vent.title, vent_path(@vent) %></h3>
+      <div class="post-author">
+        Shared by Anonymous <%= time_ago_in_words(@vent.created_at) %>
+      </div>
+    </header>
+    <div class="post">
+      <p> <%= @vent.content %> </p>
+      <span class="count">
+        <%= link_to @vent.comments.count, vent_path(@vent) %> Comments |
+      </span>
+      <span class="category">
+        <%= link_to @vent.category.name, vent_path(@vent) %>
+      </span>
+    </div>
+  </div>
+
+
 
 <div id="comments">
   <div class="comment">
@@ -22,4 +38,5 @@
       <%= render "comments/form" %>
     </div>
   </div>
+</div>
 </div>

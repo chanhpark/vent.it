@@ -7,29 +7,33 @@
 </head>
 <body>
 
-  <nav class="top-bar">
-    <ul class="title-area">
-      <li class="name">
-        <h1><a href="/">VentIt</a></h1>
-      </li>
-    </ul>
-
-    <section class="top-bar-section">
-      <ul class="right">
-        <%= link_to "Add Vent", new_vent_path, class: "button" %>
-        <%- if current_user -%>
+<div id="top">
+  <div class="contain-to-grid sticky">
+    <nav class="top-bar" data-topbar>
+      <ul class="title-area">
+        <li class="name">
+          <h1>
+            <a href="/">Vent.it</a>
+          </h1>
+        </li>
+      </ul>
+      <section class="top-bar-section">
+        <ul id="top" class="right">
+          <%= link_to "Add Vent", new_vent_path, class: "button" %>
+          <%- if current_user -%>
           <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
           <% if current_user.admin? %>
           <li><%= link_to "Admin", admin_vents_path  %></li>
           <% end %>
-        <%- else -%>
+          <%- else -%>
           <li><%= link_to 'Sign Up', new_user_registration_path %></li>
           <li><%= link_to 'Sign In', new_user_session_path %></li>
-        <%- end -%>
-      </ul>
-    </section>
-  </nav>
-
+          <%- end -%>
+        </ul>
+      </section>
+    </nav>
+  </div>
+</div>
 
   <%- flash.each do |key, value| -%>
     <div class="flash flash-<%= key %>">
@@ -39,6 +43,18 @@
 
   <%= yield %>
 
+<aside class="large-3 columns">
+  <div class="random-vent">
+    Random Vent:<br>
+      <%= link_to @random_vent.title, vent_path(@random_vent) unless @random_vent == nil %>
+      <div class="categories">
+        Categories<br>
+          <% @categories.each do |category| %>
+          <li><%= link_to category.name, category_path(category) %></li>
+          <% end %>
+      </div>
+    </div>
+    
   <%= javascript_include_tag 'application' %>
   <%= javascript_tag do %>
     $(function(){
@@ -48,3 +64,6 @@
   <%= yield :extra_footer %>
 </body>
 </html>
+
+
+  </html>

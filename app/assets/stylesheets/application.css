@@ -15,3 +15,45 @@
  *= require foundation_and_overrides
 
  */
+ .contain-to-grid, .top-bar{
+   background: #eaeaea;
+ }
+
+ .name{
+   background: #5a9aa8;
+ }
+
+ .top-bar-section ul li, .top-bar-section li:not(.has-form) a:not(.button){
+   background: none;
+
+ }
+
+ .top-bar-section li:not(.has-form) a:hover:not(.button){
+   background: none;
+   text-decoration: underline;
+   color: #1a1a1a;
+
+ }
+
+ .top-bar-section ul li > a{
+   color: #1a1a1a;
+ }
+
+ .content .post {
+   margin-bottom: 20px;
+   background-color: #fff8e9;
+   border-radius: 10px;
+   border: 2px solid #c6c6c6;
+   padding: 14px;
+ }
+
+ .post-author {
+   padding: 7px 0;
+   border-top: 1px solid #edebeb;
+ }
+
+.entry-title {
+   font-weight: bold;
+   font-size: 1.5em;
+   margin: 0 0 8px;
+ }
