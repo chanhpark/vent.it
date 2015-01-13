@@ -31,7 +31,6 @@ feature "Admin deletes and edits comments", %{
       fill_in "Email", with: user.email
       fill_in "Password", with: user.password
 
-      save_and_open_page
       click_button "Log in"
 
       visit vent_path(new_vent)
