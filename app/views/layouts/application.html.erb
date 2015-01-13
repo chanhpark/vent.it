@@ -44,21 +44,21 @@
 
   <%= yield %>
 
-<%  unless @random_vent == nil %>
 <aside class="large-3 columns">
+  <% unless @random_vent == nil %>
   <div class="random-vent">
     Random Vent:<br>
       <%= link_to @random_vent.title, vent_path(@random_vent) %>
+      <% end %>
       <div class="categories">
-        Categories<br>
         <% if @categories %>
+        Categories<br>
           <% @categories.each do |category| %>
           <li><%= link_to category.name, category_path(category) %></li>
           <% end %>
         <% end %>
     </div>
   </div>
-<% end %>
 
   <%= javascript_include_tag 'application' %>
   <%= javascript_tag do %>

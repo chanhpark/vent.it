@@ -1,7 +1,7 @@
 class VentsController < ApplicationController
 
   def index
-    @vents = Vent.all.order("created_at DESC").limit(20)
+    @vents = Vent.all.order("created_at DESC").limit(10)
     @random_vent = Vent.where(id: @vents).order("RANDOM()").first
     @categories = Category.all
   end
