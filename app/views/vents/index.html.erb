@@ -11,6 +11,7 @@
       <p> <%= vent.content %> </p>
         <span class="count">
           <%= link_to vent.comments.count, vent_path(vent) %> Comments |
+
         </span>
         <span class="category">
           <%= link_to vent.category.name, vent_path(vent) %>
@@ -18,4 +19,5 @@
       </div>
     <% end %>
   </div>
+  <%= paginate @vents %>
 </div>
