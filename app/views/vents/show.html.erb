@@ -9,9 +9,7 @@
     <div class="post">
       <p> <%= @vent.content %> </p>
         <span class="count">
-          <%= link_to pluralize(@vent.comments.count, "Comment") %> |
-        </span>
-        <span class="category">
+          <%= link_to pluralize(@vent.comments.count, "Comment") %>
           <%= link_to @vent.category.name, vent_path(@vent) %>
         </span>
     </div>
@@ -26,7 +24,7 @@
             <% unless current_user == nil %>
               <% if reply.user_id == current_user.id || current_user.admin = true  %>
                 <div class="updates">
-                  <%= link_to "Edit Comment", edit_vent_comment_path(@vent, reply) %> |
+                  <%= link_to "Edit Comment", edit_vent_comment_path(@vent, reply) %>
                   <%= link_to "Delete", vent_comment_path(@vent, reply), method: :delete, data: { confirm: "Are you sure?" } %>
               <% end %>
             <% end %>

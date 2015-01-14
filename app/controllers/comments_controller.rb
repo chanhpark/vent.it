@@ -31,8 +31,6 @@ class CommentsController < ApplicationController
     if @reply.update(comment_params)
       redirect_to vent_path(id: @reply.vent_id)
       flash[:notice] = "Comment Updated Successfully"
-    else
-      render :edit
     end
   end
 
