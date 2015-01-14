@@ -2,41 +2,37 @@
   <div class="content">
     <header>
       <h3 class="entry-title"> #<%= @vent.id %> <%= link_to @vent.title, vent_path(@vent) %></h3>
-      <div class="post-author">
-        Shared by Anonymous <%= time_ago_in_words(@vent.created_at) %>
-      </div>
+        <div class="post-author">
+          Shared by Anonymous <%= time_ago_in_words(@vent.created_at) %>
+        </div>
     </header>
     <div class="post">
       <p> <%= @vent.content %> </p>
-      <span class="count">
-        <%= link_to @vent.comments.count, vent_path(@vent) %> Comments |
-      </span>
-      <span class="category">
-        <%= link_to @vent.category.name, vent_path(@vent) %>
-      </span>
+        <span class="count">
+          <%= link_to pluralize(@vent.comments.count, "Comment") %> |
+        </span>
+        <span class="category">
+          <%= link_to @vent.category.name, vent_path(@vent) %>
+        </span>
     </div>
   </div>
-
-
-
-<div id="comments">
-  <div class="comment">
-    <% @comments.each do |reply| %>
-    <p class="content">
-      <%= reply.reply %>
-    </p>
-    Posted by <%= reply.user_id %> about <%= time_ago_in_words(reply.created_at) %> ago
-    <% unless current_user == nil %>
-    <% if reply.user_id == current_user.id || current_user.admin = true  %>
-    <div class="updates">
-      <%= link_to "Edit Comment", edit_vent_comment_path(@vent, reply) %> |
-      <%= link_to "Delete", vent_comment_path(@vent, reply), method: :delete, data: { confirm: "Are you sure?" } %>
-      <% end %>
-      <% end %>
-      <% end %>
-
-      <%= render "comments/form" %>
+  <div id="comments">
+    <div class="comment">
+      <% @comments.each do |reply| %>
+        <p class="content">
+          <%= reply.reply %>
+        </p>
+          Posted by <%= reply.user_id %> about <%= time_ago_in_words(reply.created_at) %> ago
+            <% unless current_user == nil %>
+              <% if reply.user_id == current_user.id || current_user.admin = true  %>
+                <div class="updates">
+                  <%= link_to "Edit Comment", edit_vent_comment_path(@vent, reply) %> |
+                  <%= link_to "Delete", vent_comment_path(@vent, reply), method: :delete, data: { confirm: "Are you sure?" } %>
+              <% end %>
+            <% end %>
+          <% end %>
+        <%= render "comments/form" %>
+      </div>
     </div>
   </div>
-</div>
 </div>
