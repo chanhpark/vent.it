@@ -11,6 +11,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'simple_form', '~> 3.1.0'
 gem 'kaminari', '~> 0.16.1'
+gem 'pry-rails'
 
 group :development, :test do
   gem 'byebug'
