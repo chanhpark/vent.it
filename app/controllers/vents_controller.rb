@@ -3,15 +3,15 @@ class VentsController < ApplicationController
   before_action :authenticate_user!, only: [:upvote, :downvote]
 
   def index
-    @random_vent = Vent.where(id: @vents).order("RANDOM()").limit(5)
-    @categories = Category.all
-
     if params[:query]
       @vents = Vent.search(params[:query])
     else
       @vents = Vent.all.order("created_at DESC").limit(10).page params[:page]
     end
+    
     @vents = @vents.order("created_at DESC").limit(10).page params[:page]
+    @random_vent = Vent.where(id: @vents).order("RANDOM()").limit(5)
+    @categories = Category.all
   end
 
   def show
