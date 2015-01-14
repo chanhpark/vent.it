@@ -15,7 +15,6 @@ class Vent < ActiveRecord::Base
       "to_tsvector('english', LOWER(title) || ' ' || content)",
       query
       )
-      where(["LOWER(title) LIKE ?", "%" + query.downcase + "%"])
     else
       all
     end
