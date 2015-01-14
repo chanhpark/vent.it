@@ -27,7 +27,6 @@ feature "votes on vent", %{
     scenario "User can like a vent on index" do
       vent = FactoryGirl.create(:vent)
       sign_in_as(user)
-      save_and_open_page
       expect(page).to have_content vent.title
 
       click_link("Like")
@@ -37,7 +36,6 @@ feature "votes on vent", %{
     scenario "User can dislike a vent on index" do
       vent = FactoryGirl.create(:vent)
       sign_in_as(user)
-      save_and_open_page
 
       click_link("Dislike")
       expect(page).to have_content vent.get_downvotes.size
@@ -46,7 +44,6 @@ feature "votes on vent", %{
     scenario "User can change votes on a vent on index" do
       vent = FactoryGirl.create(:vent)
       sign_in_as(user)
-      save_and_open_page
 
       click_link("Dislike")
       expect(page).to have_content vent.get_downvotes.size

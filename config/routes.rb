@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root 'vents#index'
   resources :vents do
-    resources :comments
+    resources :comments, only: [:index, :new, :create, :edit, :update, :destroy]
   end
 
   resources :vents do
