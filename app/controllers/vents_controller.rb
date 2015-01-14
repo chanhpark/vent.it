@@ -1,13 +1,17 @@
 class VentsController < ApplicationController
-  before_action :find_vents, only: [:upvote, :downvote,
-                                    :show, :edit,
-                                    :update, :destroy]
+  before_action :find_vents, only: [:upvote, :downvote, :show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:upvote, :downvote]
 
   def index
-    @vents = Vent.all.order("created_at DESC").limit(10).page params[:page]
     @random_vent = Vent.where(id: @vents).order("RANDOM()").limit(5)
     @categories = Category.all
+
+    if params[:query]
+      @vents = Vent.search(params[:query])
+    else
+      @vents = Vent.all.order("created_at DESC").limit(10).page params[:page]
+    end
+    @vents = @vents.order("created_at DESC").limit(10).page params[:page]
   end
 
   def show
@@ -49,12 +53,13 @@ class VentsController < ApplicationController
   end
 
 private
+
   def find_vents
     @vent = Vent.find(params[:id])
   end
 
   def vent_params
-    params.require(:vent).permit(:title, :content, :category_id)
+    params.require(:vent).permit(:title, :content, :category_id, :query)
   end
 
 

@@ -7,4 +7,17 @@ class Vent < ActiveRecord::Base
   has_many :comments, dependent: :destroy
   belongs_to :category
   validates :category_id, presence: true
+
+  def self.search(query)
+    if query
+      where(
+      "plainto_tsquery(?) @@ " +
+      "to_tsvector('english', LOWER(title) || ' ' || content)",
+      query
+      )
+      where(["LOWER(title) LIKE ?", "%" + query.downcase + "%"])
+    else
+      all
+    end
+  end
 end
