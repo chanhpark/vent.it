@@ -6,35 +6,29 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<nav>
+  <ul>
+    <li><a href="/">Home</a></li>
+    <%- if user_signed_in? -%>
+    <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
+    <li><%= link_to current_user.email, edit_user_registration_path %></li>
+    <% if current_user.admin? %>
+    <li><%= link_to "Admin", admin_vents_path  %></li>
+    <% end %>
+    <%- else -%>
+    <li><%= link_to 'Sign Up', new_user_registration_path %></li>
+    <li><%= link_to 'Sign In', new_user_session_path %></li>
+    <%- end -%>
+    <li><%= link_to "Add Vent", new_vent_path %></li>
+  </ul>
+</nav>
 
-<div id="top">
-  <div class="contain-to-grid sticky">
-    <nav class="top-bar" data-topbar>
-      <ul class="title-area">
-        <li class="name">
-          <h1>
-            <a href="/">Vent.it</a>
-          </h1>
-        </li>
-      </ul>
-      <section class="top-bar-section">
-        <ul id="top" class="right">
-          <%= link_to "Add Vent", new_vent_path, class: "button" %>
-          <%- if user_signed_in? -%>
-          <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
-          <li><%= link_to current_user.email, edit_user_registration_path %></li>
-          <% if current_user.admin? %>
-          <li><%= link_to "Admin", admin_vents_path  %></li>
-          <% end %>
-          <%- else -%>
-          <li><%= link_to 'Sign Up', new_user_registration_path %></li>
-          <li><%= link_to 'Sign In', new_user_session_path %></li>
-          <%- end -%>
-        </ul>
-      </section>
-    </nav>
+<div id="banner">
+  <div id="overlay">
+    <h1>Vent.it</H1>
+    </div>
   </div>
-</div>
+
 
   <%- flash.each do |key, value| -%>
     <div class="flash flash-<%= key %>">
