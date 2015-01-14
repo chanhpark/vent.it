@@ -8,7 +8,6 @@ class VentsController < ApplicationController
     else
       @vents = Vent.all.order("created_at DESC").limit(10).page params[:page]
     end
-    
     @vents = @vents.order("created_at DESC").limit(10).page params[:page]
     @random_vent = Vent.where(id: @vents).order("RANDOM()").limit(5)
     @categories = Category.all
