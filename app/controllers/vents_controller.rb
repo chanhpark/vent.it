@@ -1,5 +1,5 @@
 class VentsController < ApplicationController
-  before_action :find_vents, only: [:upvote, :downvote]
+  before_action :find_vents, only: [:upvote, :downvote, :show, :edit, :update, :destroy,]
   before_action :authenticate_user!, only: [:upvote, :downvote]
 
   def index
