@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>VentIt</title>
+  <title>Vent.It</title>
   <%= stylesheet_link_tag 'application', media: 'all' %>
   <%= csrf_meta_tags %>
 </head>
@@ -25,7 +25,7 @@
 
 <div id="banner">
   <div id="overlay">
-    <h1>Vent.it</H1>
+    <h1>Vent.It</H1>
     </div>
   </div>
 
@@ -40,19 +40,23 @@
 
 <aside class="large-3 columns">
   <% unless @random_vent == nil %>
-  <div class="random-vent">
-    Random Vent:<br>
-      <%= link_to @random_vent.title, vent_path(@random_vent) %>
-      <% end %>
-      <div class="categories">
-        <% if @categories %>
-        Categories<br>
+    <div class="random-vent">
+      Random Vents:<br>
+        <% @random_vent.each do |vent| %>
+          <li><%= link_to vent.title, vent_path(vent) %></li>
+        <% end %>
+    </div>
+  <% end %>
+
+    <div class="categories">
+      <% if @categories %>
+        Categories:<br>
           <% @categories.each do |category| %>
           <li><%= link_to category.name, category_path(category) %></li>
           <% end %>
-        <% end %>
-    </div>
+      <% end %>
   </div>
+</aside>
 
   <%= javascript_include_tag 'application' %>
   <%= javascript_tag do %>

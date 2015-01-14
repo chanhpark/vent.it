@@ -9,7 +9,7 @@
     <div class="post">
       <p> <%= @vent.content %> </p>
         <span class="count">
-          <%= link_to pluralize(@vent.comments.count, "Comment") %>
+          <%= link_to pluralize(@vent.comments.count, "Comment") %> |
           <%= link_to @vent.category.name, vent_path(@vent) %>
         </span>
     </div>
