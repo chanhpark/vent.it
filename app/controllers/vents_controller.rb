@@ -1,4 +1,8 @@
 class VentsController < ApplicationController
+  before_action :find_vents, only: [:upvote, :downvote,
+                                    :show, :edit,
+                                    :update, :destroy]
+  before_action :authenticate_user!, only: [:upvote, :downvote]
 
   def index
     @vents = Vent.all.order("created_at DESC").limit(10).page params[:page]
@@ -34,7 +38,20 @@ class VentsController < ApplicationController
     end
   end
 
+  def upvote
+    @vent.upvote_by current_user
+    redirect_to :back, notice: "You Liked this vent"
+  end
+
+  def downvote
+    @vent.downvote_by current_user
+    redirect_to :back, notice: "You Disliked this vent"
+  end
+
 private
+  def find_vents
+    @vent = Vent.find(params[:id])
+  end
 
   def vent_params
     params.require(:vent).permit(:title, :content, :category_id)

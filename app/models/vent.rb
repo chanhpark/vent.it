@@ -1,5 +1,6 @@
 class Vent < ActiveRecord::Base
   paginates_per 10
+  acts_as_votable
   validates :title, presence: true
   validates :content, presence: true
 
