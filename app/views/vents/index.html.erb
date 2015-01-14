@@ -11,11 +11,20 @@
       <p> <%= vent.content %> </p>
         <span class="count">
           <%= link_to vent.comments.count, vent_path(vent) %> Comments |
-
         </span>
         <span class="category">
           <%= link_to vent.category.name, vent_path(vent) %>
         </span>
+        <div class="votes">
+          <%= link_to like_vent_path(vent), method: :get, class: "data" do %>
+          <i class="fa fa-thumbs-o-up"></i>
+          <%= pluralize(vent.get_upvotes.size, "Like") %>
+          <% end %>
+          <%= link_to dislike_vent_path(vent),  method: :get, class: "data" do %>
+          <i class="fa fa-thumbs-o-down"></i>
+          <%= pluralize(vent.get_downvotes.size, "Dislike") %>
+          <% end %>
+        </div>
       </div>
     <% end %>
   </div>
