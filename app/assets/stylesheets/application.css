@@ -60,11 +60,6 @@
    position: relative;
    text-decoration:none
  }
- nav a:hover {
-   border-bottom: 3px solid black;
-   margin-bottom: -3px;
-   color:#000000;
- }
 
  #banner {
    height: 300px;
