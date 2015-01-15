@@ -46,15 +46,6 @@
     <%= submit_tag "Search", { class: "button info expand radius" } %>
   </div>
     <% end %>
-  <% unless @random_vent == nil %>
-    <div class="random-vent">
-      Random Vents:<br>
-        <% @random_vent.each do |vent| %>
-          <li><%= link_to vent.title, vent_path(vent) %></li>
-        <% end %>
-    </div>
-  <% end %>
-
     <div class="categories">
       <% if @categories %>
         Categories:<br>
@@ -63,6 +54,15 @@
           <% end %>
       <% end %>
   </div>
+  <br>
+  <% unless @random_vent == nil %>
+    <div class="random-vent">
+      Random Vents:<br>
+        <% @random_vent.each do |vent| %>
+          <li><%= link_to vent.title, vent_path(vent) %></li>
+        <% end %>
+    </div>
+  <% end %>
 </aside>
 
   <%= javascript_include_tag 'application' %>
