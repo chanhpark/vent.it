@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+ruby "2.0.0"
 
 gem 'rails', '4.2.0'
 gem 'pg'
@@ -32,3 +33,5 @@ gem 'foundation-rails'
 group :test do
   gem 'coveralls', require: false
 end
+
+gem 'rails_12factor', group: :production
