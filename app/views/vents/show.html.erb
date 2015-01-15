@@ -28,9 +28,9 @@
     <div class="comment">
       <% @comments.each do |reply| %>
         <p class="content">
-          <%= reply.reply %>
+          Posted by <%= reply.user.email %> about <%= time_ago_in_words(reply.created_at) %> ago
         </p>
-          Posted by <%= reply.user_id %> about <%= time_ago_in_words(reply.created_at) %> ago
+          <%= reply.reply %>
             <% unless current_user == nil %>
               <% if reply.user_id == current_user.id || current_user.admin = true  %>
                 <div class="updates">
