@@ -1,0 +1,2 @@
+class WordCountController < ApplicationController
+end

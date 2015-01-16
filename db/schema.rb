@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150114175142) do
+ActiveRecord::Schema.define(version: 20150116184016) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -71,5 +71,19 @@ ActiveRecord::Schema.define(version: 20150114175142) do
 
   add_index "votes", ["votable_id", "votable_type", "vote_scope"], name: "index_votes_on_votable_id_and_votable_type_and_vote_scope", using: :btree
   add_index "votes", ["voter_id", "voter_type", "vote_scope"], name: "index_votes_on_voter_id_and_voter_type_and_vote_scope", using: :btree
+
+  create_table "word_counts", force: :cascade do |t|
+    t.integer  "vent_id",    null: false
+    t.integer  "word_id",    null: false
+    t.integer  "count",      null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "words", force: :cascade do |t|
+    t.text     "word",       null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end

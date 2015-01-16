@@ -15,3 +15,8 @@ Category.create([{ name: "relationships" },
                  { name: "work" },
                  { name: "sports" },
                  { name: "miscellaneous" }])
+
+# require 'faker'
+# 100.times do
+#   Vent.create
+# end

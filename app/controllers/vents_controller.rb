@@ -34,6 +34,11 @@ class VentsController < ApplicationController
   def create
     @vent = Vent.new(vent_params)
     if @vent.save
+      wc = @vent.count_words(@vent.content)
+      wc.each do |word, count|
+        w = Word.find_or_create_by(word: word)
+        WordCount.create(word: w, count: count, vent: @vent)
+      end
       flash[:notice] = "Vents been posted"
       redirect_to vent_path(@vent)
     else
