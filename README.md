@@ -41,4 +41,5 @@ Jan 14th, 2015
 Jan 15th, 2015
   - deployed to Heroku
   - trying to add a word counter so that when vents posts it gets added to a table
-  - would like to have a visualization of the content and what words people say depending on what they talk about
+  - would like to have a visualization of the content and what words people say 
+    depending on what they talk about
