@@ -8,7 +8,7 @@ class Vent < ActiveRecord::Base
   belongs_to :category
   validates :category_id, presence: true
 
-  has_many :wordcounts, dependent: :destroy
+  has_many :wordcounts
 
   def self.search(query)
     if query
@@ -36,7 +36,6 @@ class Vent < ActiveRecord::Base
     common_words.each do |word|
       all_words.delete(word)
     end
-
 
     all_words.each do |add_count|
       word_count[add_count] += 1
