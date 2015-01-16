@@ -30,3 +30,15 @@ Jan 13th, 2015
   - Added Pagination to the index page
   - added styling o the navigation bar and pagination
   - Refactored code
+
+Jan 14th, 2015
+  - 5 random vents > 1 random vent
+  - acts_as_votable gem to add voting capabilities
+  - Added search feature to find Vents with that content
+  - Added Test functionality for search and voting
+  - Styling of how the page looks
+
+Jan 15th, 2015
+  - deployed to Heroku
+  - trying to add a word counter so that when vents posts it gets added to a table
+  - would like to have a visualization of the content and what words people say depending on what they talk about
