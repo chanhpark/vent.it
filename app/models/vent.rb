@@ -23,7 +23,7 @@ class Vent < ActiveRecord::Base
   end
 
   def count_words(content)
-    words = content.downcase.gsub(/[^a-z0-9\s\--]/,'').split(' ')
+    words = content.downcase.gsub(/[^a-z0-9\s\--]/, '').split(' ')
     wc = common_words(words)
     wc
   end
@@ -42,5 +42,4 @@ class Vent < ActiveRecord::Base
     end
     word_count
   end
-
 end
