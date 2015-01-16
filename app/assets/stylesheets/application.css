@@ -21,9 +21,9 @@
 }
  .content .post {
    margin-bottom: 20px;
-   background-color: #f4e7d3;
+   background-color: #4d4141;
    border-radius: 10px;
-   border: 2px solid #c6c6c6;
+   border: 2px solid #523c3c;
    padding: 14px;
  }
 
@@ -64,25 +64,26 @@
  #banner {
    height: 300px;
    margin-top: -95px;
-   background-color: #F9F2E7;
+   background-color: #474747;
    background-repeat: repeat-x;
  }
  #overlay {
    position: relative;
    top : 80px;
    margin: 0 auto;
-   background-color: #f7f9e7;
+   background-color: #474747;
    width: 1000px;
    height: 185px;
  }
  #overlay h1 {
    font-weight: 800;
+   color: #ABAAAA;
    font-size: 7em;
    text-align: center;
  }
 
  body {
-   background-color: #F9F2E7;
+   background-color: #474747;
  }
 
  footer {
@@ -97,5 +98,9 @@
  }
 
  a {
-   color: #9D7E79;
+   color: #A8A7A7;
  }
+
+p {
+  color: #f0ebeb;
+}
