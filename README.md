@@ -7,10 +7,10 @@ Vent.it
 
 Jan 10th, 2015
   - The initial commit 
-    - started the rails app and added travis, coveralls, badges to start with testing.
-    - Added some test features 
-    - Added CRUD functionality for Vents
-    - Added CRUD Functionality for Comments on a Vent.
+  - started the rails app and added travis, coveralls, badges to start with testing.
+  - Added some test features 
+  - Added CRUD functionality for Vents
+  - Added CRUD Functionality for Comments on a Vent.
 
 Jan 11th, 2015
   - Added an Admin role to the users table
@@ -46,4 +46,8 @@ Jan 15th, 2015
 
 Jan 16th, 2015
   - add the tables Words, WordCounts, with their relationships
-  - refactored the word counting methods.
+  - refactored the word counting methods
+  - When a vents get posted the content gets counted and added to Word_Counts Table.
+  - 
+Jan 17th, 2015
+  - A list of words and their counts show up on the words/index page.
