@@ -7,10 +7,10 @@ Vent.it
 
 Jan 10th, 2015
   - The initial commit 
-    - started the rails app and added travis, coveralls, badges to start with testing.
-    - Added some test features 
-    - Added CRUD functionality for Vents
-    - Added CRUD Functionality for Comments on a Vent.
+  - started the rails app and added travis, coveralls, badges to start with testing.
+  - Added some test features 
+  - Added CRUD functionality for Vents
+  - Added CRUD Functionality for Comments on a Vent.
 
 Jan 11th, 2015
   - Added an Admin role to the users table
