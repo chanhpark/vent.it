@@ -8,7 +8,7 @@ class Vent < ActiveRecord::Base
   belongs_to :category
   validates :category_id, presence: true
 
-  has_many :wordcounts
+  has_many :word_counts
 
   def self.search(query)
     if query
@@ -24,8 +24,7 @@ class Vent < ActiveRecord::Base
 
   def count_words(content)
     words = content.downcase.gsub(/[^a-z0-9\s\--]/, '').split(' ')
-    wc = common_words(words)
-    wc
+    common_words(words)
   end
 
   def common_words(words)

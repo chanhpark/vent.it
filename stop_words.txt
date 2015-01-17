@@ -2,7 +2,6 @@ a
 about
 above
 after
-again
 against
 all
 am
@@ -14,7 +13,6 @@ aren't
 as
 at
 be
-because
 been
 before
 being
@@ -48,18 +46,13 @@ hasn't
 have
 haven't
 having
-he
 he'd
 he'll
-he's
-her
 here
 here's
 hers
 herself
 him
-himself
-his
 how
 how's
 if
@@ -92,7 +85,6 @@ over
 own
 same
 shan't
-she
 she'd
 she'll
 she's
@@ -147,4 +139,3 @@ with
 won't
 would
 wouldn't
-
