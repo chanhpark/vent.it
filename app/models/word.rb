@@ -4,8 +4,8 @@ class Word < ActiveRecord::Base
 
   def total_count
     total = 0
-    word_counts.each do |wc|
-      total += wc.count
+    word_counts.each do |value|
+      total += value.count
     end
     total
   end
