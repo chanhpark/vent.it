@@ -2,33 +2,33 @@
   <div class="content">
     <% if @vents.present? %>
       <% @vents.each do |vent| %>
-        <header>
-          <h3 class="entry-title"> #<%= vent.id %> <%= link_to vent.title, vent_path(vent) %></h3>
+        <div class="post">
+          <header>
+            <h3 class="entry-title"> #<%= vent.id %> <%= link_to vent.title, vent_path(vent) %></h3>
             <div class="post-author">
               Shared by Anonymous <%= time_ago_in_words(vent.created_at) %>
             </div>
-        </header>
-    <div class="post">
-      <p class="index-content"> <%= vent.content %> </p>
-        <span class="count">
-          <%= link_to vent.comments.count, vent_path(vent) %> Comments -
-        </span>
-        <span class="category">
-          <%= link_to vent.category.name, vent_path(vent) %> -
-        </span>
-        <span class="votes">
-          <%= link_to like_vent_path(vent), method: :get, class: "data" do %>
-            <i class="fa fa-angle-double-up"></i>
-            <%= pluralize(vent.get_upvotes.size, "Like") %>
-          <% end %>
-          <%= link_to dislike_vent_path(vent),  method: :get, class: "data" do %>
-            <i class="fa fa-angle-double-down"></i>
-            <%= pluralize(vent.get_downvotes.size, "Dislike") %>
-          <% end %>
-        </span>
-    </div>
+          </header>
+            <p class="index-content"> <%= vent.content %> </p>
+            <span class="count">
+              <%= link_to vent.comments.count, vent_path(vent) %> Comments -
+            </span>
+              <span class="category">
+                <%= link_to vent.category.name, vent_path(vent) %> -
+              </span>
+                <span class="votes">
+                  <%= link_to like_vent_path(vent), method: :get, class: "data" do %>
+                    <i class="fa fa-angle-double-up"></i>
+                    <%= pluralize(vent.get_upvotes.size, "Like") %>
+                  <% end %>
+                    <%= link_to dislike_vent_path(vent),  method: :get, class: "data" do %>
+                      <i class="fa fa-angle-double-down"></i>
+                      <%= pluralize(vent.get_downvotes.size, "Dislike") %>
+                    <% end %>
+                </span>
+            </div>
       <% end %>
-    <% else %>
+      <% else %>
       <h3> Sorry No results found</h3>
     <% end %>
   </div>
@@ -38,7 +38,7 @@
 <aside class="large-3 columns">
   <div class="search">
     <%= form_tag vents_path, method: :get do %>
-    <%= text_field_tag :query %>
+      <%= text_field_tag :query %>
     <%= submit_tag "Search", { class: "button info expand radius" } %>
   </div>
   <% end %>

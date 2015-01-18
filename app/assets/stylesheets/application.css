@@ -21,9 +21,9 @@
 }
  .content .post {
    margin-bottom: 20px;
-   background-color: #4d4141;
+   background-color: #f9e9e7;
    border-radius: 10px;
-   border: 2px solid #523c3c;
+   border: 2px solid #e7f9f7;
    padding: 14px;
  }
 
@@ -64,26 +64,26 @@
  #banner {
    height: 300px;
    margin-top: -95px;
-   background-color: #474747;
+   background-color: #F9F2E7;
    background-repeat: repeat-x;
  }
  #overlay {
    position: relative;
    top : 80px;
    margin: 0 auto;
-   background-color: #474747;
+   background-color: #e7f7f9;
    width: 1000px;
    height: 185px;
  }
  #overlay h1 {
    font-weight: 800;
-   color: #ABAAAA;
+   color: #8CC1C8;
    font-size: 7em;
    text-align: center;
  }
 
  body {
-   background-color: #474747;
+   background-color: #F9F2E7;
  }
 
  footer {
@@ -98,13 +98,13 @@
  }
 
  a {
-   color: #A8A7A7;
+   color: #86b78d;
  }
 
 p {
-  color: #f0ebeb;
+  color: #ce4b3a;
 }
 
 li {
-  color: #f0ebeb;  
+  color: #f0ebeb;
 }
