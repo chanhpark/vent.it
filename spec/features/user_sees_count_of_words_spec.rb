@@ -20,7 +20,6 @@ feature "user see a list of words", %{
       expect(page).to have_content vent.content
 
       visit words_path
-      save_and_open_page
 
       expect(page).to have_content("i - 3")
     end
