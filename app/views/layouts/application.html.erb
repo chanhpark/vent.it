@@ -29,6 +29,22 @@
     <h1>Vent.It</H1>
   </div>
 </div>
+<div class="container-fluid">
+
+  <div class="tp-banner-container">
+    <div class="tp-banner">
+      <ul>
+        <!-- SLIDE  -->
+        <li data-transition="fade" data-slotamount="7" data-masterspeed="1500" >
+          <!-- MAIN IMAGE -->
+          <img src="images/slide.jpg"  alt="slidebg1"  data-bgfit="cover" data-bgposition="left top" data-bgrepeat="no-repeat">
+          <!-- LAYERS -->
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
 
 
   <%- flash.each do |key, value| -%>
@@ -37,27 +53,47 @@
     </div>
   <%- end -%>
 
-  <%= yield %>
+<div class="large-3 columns">
+    <div class="search">
+      <%= form_tag vents_path, method: :get do %>
+      <%= text_field_tag :query %>
+      <%= submit_tag "Search", { class: "button info expand radius" } %>
+    </div>
+    <% end %>
+    <span class="words">
+      <%= link_to "What Words are being used?", words_path %>
+    </span>
 
-<aside class="large-3 columns">
-    <div class="categories">
-      <% if @categories %>
-        Categories:<br>
+
+  <div class="sidebarblock">
+    <h3>Categories:</h3>
+    <div class="divline"></div>
+    <div class="blocktxt">
+      <ul class="cats">
+          <% if @categories %>
           <% @categories.each do |category| %>
           <li><%= link_to category.name, category_path(category) %></li>
           <% end %>
-      <% end %>
-  </div>
-  <br>
-  <% unless @random_vent == nil %>
-    <div class="random-vent">
-      Random Vents:<br>
-        <% @random_vent.each do |vent| %>
-          <li><%= link_to vent.title, vent_path(vent) %></li>
-        <% end %>
+          <% end %>
+      </ul>
     </div>
-  <% end %>
-</aside>
+  </div>
+  <div class="sidebarblock">
+      <% unless @random_vent == nil %>
+    <h3>Random Vents:</h3>
+    <div class="divline"></div>
+    <div class="blocktxt">
+      <div class="random-vent">
+        <% @random_vent.each do |vent| %>
+        <li><%= link_to vent.title, vent_path(vent) %></li>
+        <% end %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+  <%= yield %>
 
 <footer class="row">
     <div class="row">

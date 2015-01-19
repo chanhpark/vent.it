@@ -1,4 +1,13 @@
 <h1> Words Being used the most! </h1>
-<% @words.each do |x| %>
-<li><%= x.word %> - <%= x.total_count %></li>
-<% end %>
+<table>
+  <tr>
+    <td><strong>Word</td>
+      <td><strong>Count</td>
+      </tr>
+      <% @words.each do |x| %>
+      <tr>
+        <td><%= x.word %></td>
+        <td><%= x.total_count %></td>
+      </tr>
+      <% end %>
+    </table>
