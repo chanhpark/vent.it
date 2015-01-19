@@ -36,7 +36,7 @@
           <div id="comments">
             <div class="comment">
               <% @comments.each do |reply| %>
-              Posted by <%= reply.user.email %> about <%= time_ago_in_words(reply.created_at) %> ago
+              <%= reply.user.email %> about <%= time_ago_in_words(reply.created_at) %> ago
               <br>
               <%= reply.reply %>
               <% unless current_user == nil %>
