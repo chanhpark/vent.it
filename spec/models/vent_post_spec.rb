@@ -15,8 +15,8 @@ describe Vent do
   end
 
   describe "associations" do
-    it { should belong_to :category}
-    it { should have_many :comments}
-    it { should have_many :word_counts}
+    it { should belong_to :category }
+    it { should have_many :comments }
+    it { should have_many :word_counts }
   end
 end
