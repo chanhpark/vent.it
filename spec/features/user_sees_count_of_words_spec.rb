@@ -21,6 +21,9 @@ feature "user see a list of words", %{
 
       visit words_path
 
-      expect(page).to have_content("i - 3")
+      expect(page).to have_content("Word")
+      expect(page).to have_content("Count")
+      expect(page).to have_content("i")
+      expect(page).to have_content("3")
     end
   end
