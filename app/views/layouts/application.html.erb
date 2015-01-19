@@ -31,6 +31,7 @@
 </div>
 
 
+
   <%- flash.each do |key, value| -%>
     <div class="flash flash-<%= key %>">
       <%= value %>
@@ -38,6 +39,17 @@
   <%- end -%>
 
 <div class="large-3 columns">
+    <div class="search">
+      <%= form_tag vents_path, method: :get do %>
+      <%= text_field_tag :query %>
+      <%= submit_tag "Search", { class: "button info expand radius" } %>
+    </div>
+    <% end %>
+    <span class="words">
+      <%= link_to "What Words are being used?", words_path %>
+    </span>
+
+
   <div class="sidebarblock">
     <h3>Categories:</h3>
     <div class="divline"></div>
@@ -52,10 +64,10 @@
     </div>
   </div>
   <div class="sidebarblock">
+      <% unless @random_vent == nil %>
     <h3>Random Vents:</h3>
     <div class="divline"></div>
     <div class="blocktxt">
-      <% unless @random_vent == nil %>
       <div class="random-vent">
         <% @random_vent.each do |vent| %>
         <li><%= link_to vent.title, vent_path(vent) %></li>
@@ -67,9 +79,6 @@
 </div>
 
   <%= yield %>
-
-
-
 
 <footer class="row">
     <div class="row">
