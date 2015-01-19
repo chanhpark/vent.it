@@ -13,6 +13,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'simple_form', '~> 3.1.0'
 gem 'kaminari', '~> 0.16.1'
 gem 'acts_as_votable', '~> 0.10.0'
+gem "active_model_serializers", "~> 0.8.3"
 
 group :development, :test do
   gem 'byebug'
