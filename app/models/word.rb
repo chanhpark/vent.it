@@ -9,4 +9,17 @@ class Word < ActiveRecord::Base
     end
     total
   end
+
+  def size
+    word_counts.count
+  end
+
+  def name
+    word
+  end
+
+  def as_json(options={})
+    super(only: [],methods: [:name, :size])
+  end
+
 end

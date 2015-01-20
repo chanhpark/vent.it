@@ -1,6 +1,7 @@
 class WordsController < ApplicationController
   def index
     @words = Word.all
+    @d3_words = {"children" => @words.as_json}
     # @users_json = ActiveModel::ArraySerializer.new(@users, root: :users, scope: current_user).to_json
     # array = []
     # @words.each do |x|
@@ -11,6 +12,13 @@ class WordsController < ApplicationController
     #   hash["size"] = count
     #   array << hash
     # end
-    @d3_words = ActiveModel::Serializer.new(@words)
+    # respond_to do |format|
+    #   format.html
+    #   format.json { render json: array }
+    # end
+    # respond_to do |f|
+    #   f.html {}
+    #   f.json { render json: @words.to_builder }
+
   end
 end

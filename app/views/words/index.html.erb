@@ -25,7 +25,8 @@ text {
 
   <script src="http://d3js.org/d3.v3.min.js"></script>
   <script>
-  var root = <%= @d3_words %>;
+  var root = <%= @d3_words.to_json %>;
+  var root = <%= render partial: 'words/flare.json', formats: [:json] %>;
 
   var diameter = 960,
   format = d3.format(",d"),

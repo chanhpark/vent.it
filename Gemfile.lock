@@ -238,7 +238,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  active_model_serializers (~> 0.8.3)
+  active_model_serializers (~> 0.8.0)
   acts_as_votable (~> 0.10.0)
   byebug
   capybara
