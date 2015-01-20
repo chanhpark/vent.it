@@ -51,3 +51,8 @@ Jan 16th, 2015
   - 
 Jan 17th, 2015
   - A list of words and their counts show up on the words/index page.
+  - Added Footer and styling to all the pages
+
+Jan 18th, 2015
+   - Changed up the styling for the whole application.
+
