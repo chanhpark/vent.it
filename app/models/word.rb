@@ -15,7 +15,7 @@ class Word < ActiveRecord::Base
   end
 
   def as_json(options={})
-    super(only: [],methods: [:_id, :count])
+    super(only: [], methods: [:_id, :count])
   end
 
 end
