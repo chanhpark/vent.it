@@ -29,7 +29,7 @@
     <h1>Vent.It</H1>
     </div>
   </div>
-  
+
     <%- flash.each do |key, value| -%>
     <div class="flash flash-<%= key %>">
       <%= value %>
@@ -91,13 +91,13 @@
       </div>
     </div>
   </footer>
-
   <%= javascript_include_tag 'application' %>
   <%= javascript_tag do %>
   $(function(){
     $(document).foundation();
   });
   <% end %>
+
   <%= yield :extra_footer %>
 </body>
 </html>

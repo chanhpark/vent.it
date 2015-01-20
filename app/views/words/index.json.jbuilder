@@ -1,3 +1,1 @@
-json.children do
-  json.word @words.first.word
-end
+json.array! @words

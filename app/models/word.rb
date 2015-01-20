@@ -2,7 +2,7 @@ class Word < ActiveRecord::Base
   has_many :word_counts
   validates :word, presence: true, uniqueness: true
 
-  def total_count
+  def count
     total = 0
     word_counts.each do |value|
       total += value.count
@@ -10,16 +10,12 @@ class Word < ActiveRecord::Base
     total
   end
 
-  def size
-    word_counts.count
-  end
-
-  def name
+  def _id
     word
   end
 
   def as_json(options={})
-    super(only: [],methods: [:name, :size])
+    super(only: [], methods: [:_id, :count])
   end
 
 end

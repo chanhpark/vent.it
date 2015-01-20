@@ -1,7 +1,7 @@
 class WordsController < ApplicationController
   def index
     @words = Word.all
-    @d3_words = {"children" => @words.as_json}
+    @d3_words = @words.as_json
     # @users_json = ActiveModel::ArraySerializer.new(@users, root: :users, scope: current_user).to_json
     # array = []
     # @words.each do |x|
