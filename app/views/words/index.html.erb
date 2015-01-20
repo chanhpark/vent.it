@@ -1,32 +1,9 @@
 <h1> Words Being used the most! </h1>
 
-<!DOCTYPE html>
-<meta charset="utf-8">
-<style>
-
-text {
-  font: 10px sans-serif;
-}
-
-</style>
-<body>
-<table>
-  <tr>
-    <td><strong>Word</td>
-      <td><strong>Count</td>
-      </tr>
-      <% @words.each do |x| %>
-      <tr>
-        <td><%= x.word %></td>
-        <td><%= x.total_count %></td>
-      </tr>
-      <% end %>
-    </table>
-
-  <script src="http://d3js.org/d3.v3.min.js"></script>
-  <script>
-  var root = <%= @d3_words.to_json %>;
-  var root = <%= render partial: 'words/flare.json', formats: [:json] %>;
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script>
+  var root = <%= @d3_words.to_json.html_safe %>;
+  
 
   var diameter = 960,
   format = d3.format(",d"),
@@ -78,4 +55,4 @@ text {
 
   d3.select(self.frameElement).style("height", diameter + "px");
   drawGraph(root);
-</script>
+  </script>
