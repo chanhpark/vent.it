@@ -70,9 +70,8 @@
  #overlay {
    position: relative;
    top : 80px;
-   margin: 0 auto;
    background-color: #e7f7f9;
-   width: 1000px;
+   width: 1385px;
    height: 185px;
  }
  #overlay h1 {
