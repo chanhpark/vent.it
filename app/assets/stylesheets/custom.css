@@ -4,6 +4,7 @@
     border-radius: 2px;
     box-shadow: 0 1px 2px #c9cccd;
     margin-bottom: 20px;
+    text-align: center;
 }
 
 .sidebarblock h3 {
@@ -131,8 +132,7 @@ ul.cats .badge {
     text-align: center;
 }
 
-
-.post .comments .commentbg {
+.comments .commentbg {
     background-color: #bdc3c7;
     border-radius: 2px;
     display: inline-block;
@@ -169,7 +169,7 @@ ul.cats .badge {
     font-size: 14px;
 }
 
-.post .time {
+.time {
     color:#9da6aa;
     font-size: 12px;
     font-family: 'Open Sans Regular', sans-serif;
@@ -178,7 +178,7 @@ ul.cats .badge {
 
 }
 
-.post .time i {
+.time i {
     font-size: 14px;
 }
 

@@ -33,9 +33,15 @@
               <%= pluralize(vent.get_downvotes.size, "Dislike") %>
               <% end %>
             </div>
-
+            <div class="category">
+              <%= vent.category.name %>
+            </div>
+          <div class="time">
+            <i class="fa fa-clock-o">
+              <%= time_ago_in_words(vent.created_at) %>
+            </i>
           </div>
-          <div class="time"><i class="fa fa-clock-o"></i> <%= time_ago_in_words(vent.created_at) %></div>
+          </div>
         <div class="clearfix"></div>
       </div>
       <% end %>

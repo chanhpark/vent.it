@@ -44,14 +44,14 @@
       </div>
       <% end %>
       <span class="words">
-        <%= link_to "What Words are being used?", words_path %>
+        <h1><%= link_to "Visualize Most Used Words!", words_path %></h1>
       </span>
 
 
       <div class="sidebarblock">
         <% if @categories %>
-        <div class="divline"></div>
         <h3>Categories:</h3>
+        <div class="divline"></div>
         <div class="blocktxt">
             <% @categories.each do |category| %>
             <li><%= link_to category.name, category_path(category) %></li>

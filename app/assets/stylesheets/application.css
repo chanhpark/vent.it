@@ -108,3 +108,22 @@ p {
 li {
   color: #f0ebeb;
 }
+
+.category {
+  text-align: center;
+  border-bottom: solid 1px #f1f1f1;
+  color:#9da6aa;
+  font-size: 12px;
+  font-family: 'Open Sans Regular', sans-serif;
+  text-align: center;
+  line-height: 29px;
+}
+
+.time {
+  border-bottom: solid 1px #f1f1f1;
+  color:#9da6aa;
+  font-size: 12px;
+  font-family: 'Open Sans Regular', sans-serif;
+  text-align: center;
+  line-height: 29px;
+}
