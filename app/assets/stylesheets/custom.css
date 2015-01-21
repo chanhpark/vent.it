@@ -4,6 +4,7 @@
     border-radius: 2px;
     box-shadow: 0 1px 2px #c9cccd;
     margin-bottom: 20px;
+    text-align: center;
 }
 
 .sidebarblock h3 {
@@ -125,14 +126,13 @@ ul.cats .badge {
     margin-bottom: 10px;
 }
 
-.post .comments {
+.post .comment {
     border-bottom: solid 1px #f1f1f1;
     padding: 18px 0 25px 0;
     text-align: center;
 }
 
-
-.post .comments .commentbg {
+.comments .commentbg {
     background-color: #bdc3c7;
     border-radius: 2px;
     display: inline-block;
@@ -141,19 +141,6 @@ ul.cats .badge {
     font-size: 14px;
     font-family: 'Open Sans Bold', sans-serif;
     position: relative;
-}
-
-.post .comments .commentbg .mark {
-    width: 11px;
-    height: 11px;
-    background-color: #bdc3c7;
-    position: absolute;
-    bottom: 0;
-    left: 43%;
-    margin-bottom: -5px;
-    transform:rotate(45deg);
-    -ms-transform:rotate(45deg); /* IE 9 */
-    -webkit-transform:rotate(45deg); /* Opera, Chrome, and Safari */
 }
 
 .post .views {
@@ -169,7 +156,7 @@ ul.cats .badge {
     font-size: 14px;
 }
 
-.post .time {
+.time {
     color:#9da6aa;
     font-size: 12px;
     font-family: 'Open Sans Regular', sans-serif;
@@ -178,12 +165,26 @@ ul.cats .badge {
 
 }
 
-.post .time i {
+.time i {
     font-size: 14px;
 }
 
-
-
+.comment {
+  background-color: #9a635b;
+  padding: 12px 17px;
+  color: #ffffff;
+  font-size: 14px;
+  font-family: 'Open Sans Bold', sans-serif;
+}
+.comments {
+  border-radius: 2px;
+  padding: 12px 17px;
+  border-bottom: solid 1px #f1f1f1;
+  color: #ffffff;
+  font-size: 14px;
+  font-family: 'Open Sans Bold', sans-serif;
+  text-align: center;
+}
 
 
 
@@ -376,133 +377,6 @@ a.down:hover {
 }
 
 
-
-/*-----------------------------------------------------------------*/
-/*--- #03_new_topic.html - NEW TOPIC ---*/
-
-.newtopic input[type=text],
-.newtopic input[type=password]
-{
-    border-radius: 2px;
-    box-shadow: none;
-    border: none;
-    background-color: #f1f1f1;
-    padding: 20px;
-    font-size: 14px;
-    color: #989c9e;
-    font-family: 'Open Sans Light', sans-serif;
-    margin-bottom: 20px;
-    height: 50px;
-}
-
-.newtopic select {
-    border-radius: 2px;
-    box-shadow: none;
-    border: solid 1px #cfd5d7;
-    background-color: #ffffff;
-
-    font-size: 14px;
-    color: #989c9e;
-    font-family: 'Open Sans Light', sans-serif;
-    margin-bottom: 20px;
-    height: 50px;
-}
-
-.newtopic select:hover,
-.newtopic select:focus,
-.newtopic select:active {
-    box-shadow: none;
-}
-
-
-.newtopic textarea {
-    border-radius: 2px;
-    box-shadow: none;
-    border: none;
-    background-color: #f1f1f1;
-    padding: 20px;
-    font-size: 14px;
-    color: #989c9e;
-    font-family: 'Open Sans Light', sans-serif;
-    margin-bottom: 20px;
-    height: 150px;
-}
-
-.newtopic textarea:hover,
-.newtopic textarea:focus,
-.newtopic textarea:active {
-    box-shadow: none;
-}
-
-.newtopic p {
-    font-size: 14px;
-    color: #363838;
-    font-family: 'Open Sans Light', sans-serif;
-}
-
-
-.newtopcheckbox input {
-    margin-top: 5px;
-    width: 18px;
-    height: 18px;
-
-    /*    width: 18px;
-        box-shadow: none;
-        margin-top: 8px;
-        border-color: #bdc3c7;*/
-
-}
-
-.checkbox input {
-    margin-right: 7px;
-}
-
-.checkbox .fa-facebook-square {
-    color: #3b5b99;
-    font-size: 20px;
-    margin-top: 4px;
-}
-
-.checkbox .fa-google-plus-square {
-    color: #e74724;
-    font-size: 20px;
-    margin-top: 4px;
-}
-
-.checkbox .fa-twitter {
-    color: #42c8f4;
-    font-size: 20px;
-    margin-top: 4px;
-}
-
-.loading {
-    text-align: right;
-}
-
-.similarposts {
-    /*    height: 57px;*/
-    margin-bottom: 20px;
-
-}
-
-.similarposts p {
-    display: inline;
-    color: #bdc3c7;
-}
-.similarposts p span {
-    color: #363838;
-}
-
-.similarposts .fa-info-circle {
-    font-size: 18px;
-    color: #3498db;
-    margin-right: 10px;
-}
-
-.similarposts .fa-spinner {
-    font-size: 18px;
-    color: #363838;
-}
 
 .postinfotop h2 {
     color: #363838;

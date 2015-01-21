@@ -1,58 +1,52 @@
-<div class="container">
-  <div class="row">
-    <div class="large-9 column">
-      <div class="post beforepagination">
-        <div class="topwrap">
-          <div class="userinfo pull-left">
-            <h4>#<%= @vent.id %></h4>
-          </div>
-          <div class="posttext pull-left">
-            <h4><%= @vent.title %></h4>
-            Shared by Anonymous
-            <p><%= @vent.content %></p>
-          </div>
-          <div class="clearfix"></div>
-        </div>
-        <div class="postinfobot">
-          <div class="likeblock pull-left">
-            <%= link_to like_vent_path(@vent), method: :get, class: "data" do %>
-            <i class="fa fa-thumbs-o-up"></i><%= pluralize(@vent.get_upvotes.size, "Like") %>
-            <% end %>
-          </div>
-          <div class="dislikeblock pull-left">
-            <%= link_to dislike_vent_path(@vent),  method: :get, class: "data" do %>
-            <i class="fa fa-thumbs-o-down"></i><%= pluralize(@vent.get_downvotes.size, "Dislike") %>
-            <% end %>
-          </div>
-          <div class="posted pull-right">
-            <i class="fa fa-clock-o">
-              <%= time_ago_in_words(@vent.created_at) %>
-            </i>
-            <%= @vent.category.name %>
-          </div>
-        </div>
-
-        <div class="clearfix">
-          <div id="comments">
-            <div class="comment">
-              <% @comments.each do |reply| %>
-              <%= reply.user.email %> about <%= time_ago_in_words(reply.created_at) %> ago
-              <br>
-              <%= reply.reply %>
-              <% unless current_user == nil %>
-              <% if reply.user_id == current_user.id || current_user.admin = true  %>
-              <div class="updates">
-                <%= link_to "Edit Comment", edit_vent_comment_path(@vent, reply) %>
-                <%= link_to "Delete", vent_comment_path(@vent, reply), method: :delete, data: { confirm: "Are you sure?" } %>
-                <% end %>
-                <% end %>
-                <% end %>
-                <%= render "comments/form" %>
-              </div>
-            </div>
-          </div>
-        </div>
+<div class="large-9 column">
+  <div class="post beforepagination">
+    <div class="userinfo pull-left">
+      <h4>#<%= @vent.id %></h4>
+    </div>
+    <div class="posttext pull-left">
+      <h4><%= @vent.title %></h4>
+      Shared by Anonymous
+      <p><%= @vent.content %></p>
+    </div>
+    <div class="clearfix"></div>
+    <div class="postinfobot">
+      <div class="likeblock pull-left">
+        <%= link_to like_vent_path(@vent), method: :get, class: "data" do %>
+        <i class="fa fa-thumbs-o-up"></i><%= pluralize(@vent.get_upvotes.size, "Like") %>
+        <% end %>
+      </div>
+      <div class="dislikeblock pull-left">
+        <%= link_to dislike_vent_path(@vent),  method: :get, class: "data" do %>
+        <i class="fa fa-thumbs-o-down"></i><%= pluralize(@vent.get_downvotes.size, "Dislike") %>
+        <% end %>
+      </div>
+      <div class="posted pull-left">
+        <i class="fa fa-clock-o">
+          <%= time_ago_in_words(@vent.created_at) %>
+        </i>
+        <%= @vent.category.name %>
+      </div>
+    </div>
+    <div class="comment">
+      <% @comments.each do |reply| %>
+      <br>
+      <br>
+      <br>
+      <%= reply.user.email %> about <%= time_ago_in_words(reply.created_at) %> ago
+      <br>
+      <%= reply.reply %>
+      <% unless current_user == nil %>
+      <% if reply.user_id == current_user.id || current_user.admin = true  %>
+      <div class="updates">
+        <%= link_to "Edit Comment", edit_vent_comment_path(@vent, reply) %>
+        <%= link_to "Delete", vent_comment_path(@vent, reply), method: :delete, data: { confirm: "Are you sure?" } %>
+        <% end %>
+        <% end %>
+        <% end %>
+        <%= render "comments/form" %>
       </div>
     </div>
   </div>
+</div>
+</div>
 </div>
