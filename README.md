@@ -55,4 +55,6 @@ Jan 17th, 2015
 
 Jan 18th, 2015
    - Changed up the styling for the whole application.
+   - fixed search bar
+   - fixed failing test for the word counter
 
