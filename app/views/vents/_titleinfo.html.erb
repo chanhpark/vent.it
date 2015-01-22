@@ -1,0 +1,11 @@
+<div class="wrap-ut pull-left">
+  <div class="userinfo pull-left">
+    <h4>#<%= vent.id %></h4>
+  </div>
+  <div class="posttext pull-left">
+    <h3 class="entry-title"><%= link_to vent.title, vent_path(vent) %></h3>
+    Shared by Anonymous
+    <p> <%= truncate( "#{vent.content}", length: 380 ) %> </p>
+  </div>
+  <div class="clearfix"></div>
+</div>
