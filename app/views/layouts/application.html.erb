@@ -42,9 +42,10 @@
         <%= text_field_tag :query %>
         <%= submit_tag "Search", { class: "button info expand radius" } %>
       <% end %>
+      <% if current_page?(root_path) %>
         <h1><%= link_to "Visualize Most Used Words!", words_path %></h1>
+        <% end %>
       </div>
-
 
     <% if @categories %>
       <div class="sidebarblock">

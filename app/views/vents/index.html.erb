@@ -1,50 +1,15 @@
 <div class="large-9 column">
   <% if @vents.present? %>
-  <% @vents.each do |vent| %>
+    <% @vents.each do |vent| %>
   <div class="post">
-    <div class="wrap-ut pull-left">
-      <div class="userinfo pull-left">
-        <h4>#<%= vent.id %></h4>
-      </div>
-      <div class="posttext pull-left">
-        <h3 class="entry-title"><%= link_to vent.title, vent_path(vent) %></h3>
-        Shared by Anonymous
-        <p> <%= truncate( "#{vent.content}", length: 380 ) %> </p>
-      </div>
-      <div class="clearfix"></div>
+    <%= render partial: "titleinfo", locals: { vent: vent } %>
+    <%= render partial: "indexventinfo", locals: { vent: vent } %>
+    <div class="clearfix">
     </div>
-    <div class="postinfo pull-left">
-      <div class="comments">
-        <div class="commentbg">
-          <%= link_to vent.comments.count, vent_path(vent) %>
-        </div>
-
-      </div>
-      <div class="views">
-        <%= link_to like_vent_path(vent), method: :get, class: "data" do %>
-        <i class="fa fa-angle-double-up"></i>
-        <%= pluralize(vent.get_upvotes.size, "Like") %>
-        <% end %>
-        <br>
-        <%= link_to dislike_vent_path(vent),  method: :get, class: "data" do %>
-        <i class="fa fa-angle-double-down"></i>
-        <%= pluralize(vent.get_downvotes.size, "Dislike") %>
-        <% end %>
-      </div>
-      <div class="category">
-        <%= vent.category.name %>
-      </div>
-      <div class="time">
-        <i class="fa fa-clock-o">
-          <%= time_ago_in_words(vent.created_at) %>
-        </i>
-      </div>
-    </div>
-    <div class="clearfix"></div>
   </div>
-  <% end %>
+    <% end %>
   <% else %>
-  <h3> Sorry No results found</h3>
+    <h3> Sorry No results found</h3>
   <% end %>
-  <%= paginate @vents %>
+    <%= paginate @vents %>
 </div>
