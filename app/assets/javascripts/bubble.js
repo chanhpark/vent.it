@@ -49,7 +49,7 @@ d3.json("/words.json", function(error, root) {
     .data(nodes)
     .enter().append("circle")
     .filter(function(d){ return d.count > 1; })
-    .style("fill", function(d) { return '#f03838'; })
+    .style("fill", function(d) { return '#dcbeef'; })
     .call(force.drag);
 
     var label = svg.selectAll("g")
