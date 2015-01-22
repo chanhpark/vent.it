@@ -1,16 +1,17 @@
 <h1> Words Being used the most! </h1>
-<p> Now that you've vented! If its something that you can't change stop worrying about it and let it go;
-  thinking of it will only make it worse. So go checkout <a href="http://creativeity.herokuapp.com/">this app</a> and see what others are
-  doing to keep themselves working hard and doing what they love. </p>
-
 <word-cloud>
 </word-cloud>
+
+<ul><%= image_tag("dont.jpg") %><%= image_tag("yes.jpg") %></ul>
+<p> Now that you've vented! If its something that you can't change stop worrying about it and let it go;
+  thinking of it will only make it worse.</p><h3><a href="http://creativeity.herokuapp.com/">Check out this app to see what is motivating others.</a></h3>
+
 
 <script src="http://d3js.org/d3.v3.min.js"></script>
 
 <script>
 var width = 1250,
-height = 500,
+height = 400,
 padding = 1.5, // separation between same-color nodes
 clusterPadding = 6, // separation between nodes
 maxRadius = 12;
