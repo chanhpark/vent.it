@@ -6,7 +6,9 @@
     <div class="posttext pull-left">
       <h4><%= @vent.title %></h4>
       Shared by Anonymous
-      <p><%= @vent.content %></p>
+      <p>
+        <%= @vent.content %>
+      </p>
     </div>
     <div class="clearfix"></div>
     <div class="postinfobot">
@@ -29,24 +31,22 @@
     </div>
     <div class="comment">
       <% @comments.each do |reply| %>
-      <br>
-      <br>
-      <br>
-      <%= reply.user.email %> about <%= time_ago_in_words(reply.created_at) %> ago
-      <br>
-      <%= reply.reply %>
-      <% unless current_user == nil %>
-      <% if reply.user_id == current_user.id || current_user.admin = true  %>
-      <div class="updates">
-        <%= link_to "Edit Comment", edit_vent_comment_path(@vent, reply) %>
-        <%= link_to "Delete", vent_comment_path(@vent, reply), method: :delete, data: { confirm: "Are you sure?" } %>
-        <% end %>
-        <% end %>
-        <% end %>
-        <%= render "comments/form" %>
-      </div>
+        <br>
+        <br>
+        <br>
+        <%= reply.user.email %> about <%= time_ago_in_words(reply.created_at) %> ago
+        <br>
+          <%= reply.reply %>
+            <% unless current_user == nil %>
+              <% if reply.user_id == current_user.id || current_user.admin = true  %>
+                <div class="updates">
+                  <%= link_to "Edit Comment", edit_vent_comment_path(@vent, reply) %>
+                  <%= link_to "Delete", vent_comment_path(@vent, reply), method: :delete, data: { confirm: "Are you sure?" } %>
+                </div>
+              <% end %>
+            <% end %>
+      <% end %>
     </div>
+   <%= render "comments/form" %>
   </div>
-</div>
-</div>
 </div>

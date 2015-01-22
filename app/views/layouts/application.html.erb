@@ -3,7 +3,7 @@
 <head>
   <title>Vent.It</title>
   <%= stylesheet_link_tag 'application', media: 'all' %>
-  <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet"></link>
+  <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -41,56 +41,55 @@
         <%= form_tag vents_path, method: :get do %>
         <%= text_field_tag :query %>
         <%= submit_tag "Search", { class: "button info expand radius" } %>
-      </div>
       <% end %>
-      <span class="words">
         <h1><%= link_to "Visualize Most Used Words!", words_path %></h1>
-      </span>
+      </div>
 
 
+    <% if @categories %>
       <div class="sidebarblock">
-        <% if @categories %>
         <h3>Categories:</h3>
-        <div class="divline"></div>
-        <div class="blocktxt">
-            <% @categories.each do |category| %>
-            <li><%= link_to category.name, category_path(category) %></li>
-            <% end %>
+          <div class="divline"></div>
+            <div class="blocktxt">
+              <% @categories.each do |category| %>
+              <ul>
+                <li><%= link_to category.name, category_path(category) %></li>
+              </ul>
             <% end %>
         </div>
       </div>
+    <% end %>
+    <% unless @random_vent == nil %>
       <div class="sidebarblock">
-        <% unless @random_vent == nil %>
         <h3>Random Vents:</h3>
         <div class="divline"></div>
         <div class="blocktxt">
           <div class="random-vent">
+            <ul>
             <% @random_vent.each do |vent| %>
-            <li><%= link_to vent.title, vent_path(vent) %></li>
+              <li><%= link_to vent.title, vent_path(vent) %></li>
             <% end %>
+            </ul>
           </div>
-          <% end %>
         </div>
       </div>
-    </div>
-
+    <% end %>
+  </div>
     <%= yield %>
-
-    <footer class="row">
-      <div class="row">
-        <div class="large-8 columns">
-          <p>© Chan H. Park</p>
-        </div>
-        <div class="large-4 columns">
-          <ul class="inline-list right">
-            <li><a class="fa fa-linkedin-square" href="https://linkedin.com/in/chanhpark"></a></li>
-            <li><a class="fa fa-github-square" href="https://github.com/chanhpark"></a></li>
-            <li><a class="fa fa-twitter-square" href="https://twitter.com/cpark1211"></a></li>
-          </ul>
-        </div>
-      </div>
+<footer class="row">
+  <div class="row">
+    <div class="large-8 columns">
+      <p>© Chan H. Park</p>
     </div>
-  </footer>
+      <div class="large-4 columns">
+        <ul class="inline-list right">
+          <li><a class="fa fa-linkedin-square" href="https://linkedin.com/in/chanhpark"></a></li>
+          <li><a class="fa fa-github-square" href="https://github.com/chanhpark"></a></li>
+          <li><a class="fa fa-twitter-square" href="https://twitter.com/cpark1211"></a></li>
+        </ul>
+      </div>
+  </div>
+</footer>
   <%= javascript_include_tag 'application' %>
   <%= javascript_tag do %>
   $(function(){
