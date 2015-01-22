@@ -57,7 +57,7 @@ Jan 18th, 2015
    - Changed up the styling for the whole application.
    - fixed search bar
    - fixed failing test for the word counter
-   - 
+
 Jan 19th, 2015
    - Added unit tests for my models.
    - got a sample visual of d3 working to see the type of hash needed to push through as the root
