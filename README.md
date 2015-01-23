@@ -5,6 +5,17 @@ Vent.it
 [![Code Climate](https://codeclimate.com/github/chanhpark/vent.it/badges/gpa.svg)](https://codeclimate.com/github/chanhpark/vent.it)
 [![Coverage Status](https://coveralls.io/repos/chanhpark/vent.it/badge.png?branch=master)](https://coveralls.io/r/chanhpark/vent.it?branch=master)
 
+Vent.it is an App where people can come and vent and get things off their chest. It was my Breakable Toy for the last week of Launch Academy.
+
+Here are some screenshots of Vent.it
+
+Home Page
+![alt tag](home.png)
+D3 Visualization
+![alt tag](data.png)
+Admin Page
+![alt tag](admin.png)
+
 Jan 10th, 2015
   - The initial commit
   - started the rails app and added travis, coveralls, badges to start with testing.
@@ -75,3 +86,8 @@ Jan 22nd, 2015
    - checked for w3c html markup validations
    - added partials to code
    - changed node colors
+
+Jan 23rd, 2015
+   - refactored code
+   - banner is responsive
+   - truncated user email on nav
