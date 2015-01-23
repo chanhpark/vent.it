@@ -1,4 +1,4 @@
-Vent.it
+##Vent.it
 ======
 
 [![Build Status](https://travis-ci.org/chanhpark/vent.it.svg)](https://travis-ci.org/chanhpark/vent.it)
@@ -16,25 +16,25 @@ D3 Visualization
 Admin Page
 ![alt tag](admin.png)
 
-Jan 10th, 2015
+**Jan 10th, 2015**
   - The initial commit
   - started the rails app and added travis, coveralls, badges to start with testing.
   - Added some test features
   - Added CRUD functionality for Vents
   - Added CRUD Functionality for Comments on a Vent.
 
-Jan 11th, 2015
+**Jan 11th, 2015**
   - Added an Admin role to the users table
   - Added test for being able to edit and delete comments
   - Admin is able to edit/delete Vents
   - cleaned up unncessary code
 
-Jan 12th, 2015
+**Jan 12th, 2015**
   - Added Categories Table with association to Vents
   - Added functionality to choosing a Category when a Vent is posted
   - Added a Random Vent to populate on the index page
 
-Jan 13th, 2015
+**Jan 13th, 2015**
   - Added test to show the categories on the Vent
   - Styling for forms and signup/signin
   - Fixed the random post for the show page
@@ -42,7 +42,7 @@ Jan 13th, 2015
   - added styling o the navigation bar and pagination
   - Refactored code
 
-Jan 14th, 2015
+**Jan 14th, 2015**
   - 5 random vents > 1 random vent
   - acts_as_votable gem to add voting capabilities
   - Added search feature to find Vents with that content
@@ -55,44 +55,44 @@ Jan 15th, 2015
   - would like to have a visualization of the content and what words people say
     depending on what they talk about
 
-Jan 16th, 2015
+**Jan 16th, 2015**
   - add the tables Words, WordCounts, with their relationships
   - refactored the word counting methods
   - When a vents get posted the content gets counted and added to Word_Counts Table.
   -
-Jan 17th, 2015
+**Jan 17th, 2015**
   - A list of words and their counts show up on the words/index page.
   - Added Footer and styling to all the pages
 
-Jan 18th, 2015
+**Jan 18th, 2015**
    - Changed up the styling for the whole application.
    - fixed search bar
    - fixed failing test for the word counter
 
-Jan 19th, 2015
+**Jan 19th, 2015**
    - Added unit tests for my models.
    - got a sample visual of d3 working to see the type of hash needed to push through as the root
    - changed the show page for comments
 
-Jan 20th, 2015
+**Jan 20th, 2015**
    - took out serializer and decided to use Jbuilder instead
    - got d3 beautifulbubbles through D3 to show on page
    - changed word column type from text to string in the Words Table
 
-Jan 21st, 2015
+**Jan 21st, 2015**
    - Added styling to the application
 
-Jan 22nd, 2015
+**Jan 22nd, 2015**
    - checked for w3c html markup validations
    - added partials to code
    - changed node colors
 
-Jan 23rd, 2015
+**Jan 23rd, 2015**
    - refactored code
    - banner is responsive
    - truncated user email on nav
 
-Things to do:
+**Things to do:**
 - optimize the json reader with D3 so load time of visualization is faster
 - style the application more
 - Ajax to update the votes rather than refreshing the whole page
