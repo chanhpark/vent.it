@@ -6,9 +6,9 @@ Vent.it
 [![Coverage Status](https://coveralls.io/repos/chanhpark/vent.it/badge.png?branch=master)](https://coveralls.io/r/chanhpark/vent.it?branch=master)
 
 Jan 10th, 2015
-  - The initial commit 
+  - The initial commit
   - started the rails app and added travis, coveralls, badges to start with testing.
-  - Added some test features 
+  - Added some test features
   - Added CRUD functionality for Vents
   - Added CRUD Functionality for Comments on a Vent.
 
@@ -41,14 +41,14 @@ Jan 14th, 2015
 Jan 15th, 2015
   - deployed to Heroku
   - trying to add a word counter so that when vents posts it gets added to a table
-  - would like to have a visualization of the content and what words people say 
+  - would like to have a visualization of the content and what words people say
     depending on what they talk about
 
 Jan 16th, 2015
   - add the tables Words, WordCounts, with their relationships
   - refactored the word counting methods
   - When a vents get posted the content gets counted and added to Word_Counts Table.
-  - 
+  -
 Jan 17th, 2015
   - A list of words and their counts show up on the words/index page.
   - Added Footer and styling to all the pages
@@ -62,7 +62,7 @@ Jan 19th, 2015
    - Added unit tests for my models.
    - got a sample visual of d3 working to see the type of hash needed to push through as the root
    - changed the show page for comments
-   
+
 Jan 20th, 2015
    - took out serializer and decided to use Jbuilder instead
    - got d3 beautifulbubbles through D3 to show on page
@@ -70,10 +70,8 @@ Jan 20th, 2015
 
 Jan 21st, 2015
    - Added styling to the application
-   
+
 Jan 22nd, 2015
    - checked for w3c html markup validations
    - added partials to code
    - changed node colors
-
-
