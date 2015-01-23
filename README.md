@@ -62,5 +62,10 @@ Jan 19th, 2015
    - Added unit tests for my models.
    - got a sample visual of d3 working to see the type of hash needed to push through as the root
    - changed the show page for comments
-
+   
+Jan 20th, 2015
+   - took out serializer and decided to use Jbuilder instead
+   - got d3 beautifulbubbles through D3 to show on page
+   - changed word column type from text to string in the Words Table
+   - 
 
