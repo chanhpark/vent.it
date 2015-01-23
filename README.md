@@ -91,3 +91,9 @@ Jan 23rd, 2015
    - refactored code
    - banner is responsive
    - truncated user email on nav
+
+Things to do:
+- optimize the json reader with D3 so load time of visualization is faster
+- style the application more
+- Ajax to update the votes rather than refreshing the whole page
+- add twitter authentication - so people can be able to vent the tweet straight to their twitter page
