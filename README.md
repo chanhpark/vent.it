@@ -67,5 +67,11 @@ Jan 20th, 2015
    - took out serializer and decided to use Jbuilder instead
    - got d3 beautifulbubbles through D3 to show on page
    - changed word column type from text to string in the Words Table
-   - 
+
+Jan 21st, 2015
+   - Added styling to the application
+   - checked for w3c html markup validations
+   - added partials to code
+   - changed node colors
+
 
