@@ -49,7 +49,7 @@ Admin Page
   - Added Test functionality for search and voting
   - Styling of how the page looks
 
-Jan 15th, 2015
+**Jan 15th, 2015**
   - deployed to Heroku
   - trying to add a word counter so that when vents posts it gets added to a table
   - would like to have a visualization of the content and what words people say
