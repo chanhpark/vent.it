@@ -1,22 +1,22 @@
 <nav>
   <ul>
     <li><a href="/">Home</a></li>
-    <%- if user_signed_in? -%>
+      <%- if user_signed_in? -%>
     <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
     <li><%= link_to current_user.email, edit_user_registration_path %></li>
-    <% if current_user.admin? %>
+        <% if current_user.admin? %>
     <li><%= link_to "Admin", admin_vents_path  %></li>
-    <% end %>
-    <%- else -%>
+        <% end %>
+      <%- else -%>
     <li><%= link_to 'Sign Up', new_user_registration_path %></li>
     <li><%= link_to 'Sign In', new_user_session_path %></li>
     <%- end -%>
     <li><%= link_to "Add Vent", new_vent_path %></li>
   </ul>
-</nav>
 
 <div id="banner">
   <div id="overlay">
     <h1>Vent.It</H1>
     </div>
   </div>
+</nav>

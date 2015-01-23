@@ -1,18 +1,18 @@
 <div class="postinfobot">
   <div class="likeblock pull-left">
     <%= link_to like_vent_path(@vent), method: :get, class: "data" do %>
-    <i class="fa fa-thumbs-o-up"></i><%= pluralize(@vent.get_upvotes.size, "Like") %>
+      <i class="fa fa-thumbs-o-up"></i><%= pluralize(@vent.get_upvotes.size, "Like") %>
     <% end %>
   </div>
   <div class="dislikeblock pull-left">
     <%= link_to dislike_vent_path(@vent),  method: :get, class: "data" do %>
-    <i class="fa fa-thumbs-o-down"></i><%= pluralize(@vent.get_downvotes.size, "Dislike") %>
+      <i class="fa fa-thumbs-o-down"></i><%= pluralize(@vent.get_downvotes.size, "Dislike") %>
     <% end %>
   </div>
-  <div class="posted pull-left">
-    <i class="fa fa-clock-o">
-      <%= time_ago_in_words(@vent.created_at) %>
-    </i>
+    <div class="posted pull-left">
+      <i class="fa fa-clock-o">
+        <%= time_ago_in_words(@vent.created_at) %>
+      </i>
     <%= @vent.category.name %>
   </div>
 </div>

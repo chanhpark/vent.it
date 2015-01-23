@@ -1,27 +1,26 @@
 <div class="postinfo pull-left">
-<div class="comments">
-  <div class="commentbg">
-    <%= link_to vent.comments.count, vent_path(vent) %>
+  <div class="comments">
+    <div class="commentbg">
+      <%= link_to vent.comments.count, vent_path(vent) %>
+    </div>
   </div>
-
-</div>
-<div class="views">
-  <%= link_to like_vent_path(vent), method: :get, class: "data" do %>
-  <i class="fa fa-angle-double-up"></i>
-  <%= pluralize(vent.get_upvotes.size, "Like") %>
-  <% end %>
+  <div class="views">
+    <%= link_to like_vent_path(vent), method: :get, class: "data" do %>
+      <i class="fa fa-angle-double-up"></i>
+      <%= pluralize(vent.get_upvotes.size, "Like") %>
+    <% end %>
   <br>
-  <%= link_to dislike_vent_path(vent),  method: :get, class: "data" do %>
-  <i class="fa fa-angle-double-down"></i>
-  <%= pluralize(vent.get_downvotes.size, "Dislike") %>
-  <% end %>
-</div>
-<div class="category">
-  <%= vent.category.name %>
-</div>
-<div class="time">
-  <i class="fa fa-clock-o">
-    <%= time_ago_in_words(vent.created_at) %>
-  </i>
-</div>
+    <%= link_to dislike_vent_path(vent),  method: :get, class: "data" do %>
+      <i class="fa fa-angle-double-down"></i>
+      <%= pluralize(vent.get_downvotes.size, "Dislike") %>
+    <% end %>
+  </div>
+  <div class="category">
+    <%= vent.category.name %>
+  </div>
+  <div class="time">
+    <i class="fa fa-clock-o">
+      <%= time_ago_in_words(vent.created_at) %>
+    </i>
+  </div>
 </div>
