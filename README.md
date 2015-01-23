@@ -70,6 +70,8 @@ Jan 20th, 2015
 
 Jan 21st, 2015
    - Added styling to the application
+   
+Jan 22nd, 2015
    - checked for w3c html markup validations
    - added partials to code
    - changed node colors
