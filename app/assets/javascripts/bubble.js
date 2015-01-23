@@ -4,7 +4,7 @@ padding = 1.5, // separation between same-color nodes
 clusterPadding = 6, // separation between nodes
 maxRadius = 12;
 
-var n = 400, // total number of nodes
+var n = 300, // total number of nodes
 m = 1; // number of distinct clusters
 
 var color = d3.scale.category10()
