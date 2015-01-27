@@ -1,4 +1,4 @@
-##Vent.it
+Vent.it
 ======
 
 [![Build Status](https://travis-ci.org/chanhpark/vent.it.svg)](https://travis-ci.org/chanhpark/vent.it)
@@ -6,15 +6,6 @@
 [![Coverage Status](https://coveralls.io/repos/chanhpark/vent.it/badge.png?branch=master)](https://coveralls.io/r/chanhpark/vent.it?branch=master)
 
 Vent.it is an App where people can come and vent and get things off their chest. It was my Breakable Toy for the last week of Launch Academy.
-
-Here are some screenshots of Vent.it
-
-Home Page
-![alt tag](home.png)
-D3 Visualization
-![alt tag](data.png)
-Admin Page
-![alt tag](admin.png)
 
 Give Vent.it a try at : http://ventit.herokuapp.com
 
@@ -113,3 +104,13 @@ In case you didnt want to go through all my commit history: Below is a day break
 - style the application more
 - Ajax to update the votes rather than refreshing the whole page
 - add twitter authentication - so people can be able to vent the tweet straight to their twitter page
+
+
+Here are some screenshots of Vent.it
+
+Home Page
+![alt tag](home.png)
+D3 Visualization
+![alt tag](data.png)
+Admin Page
+![alt tag](admin.png)
