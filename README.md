@@ -1,4 +1,4 @@
-##Vent.it
+Vent.it
 ======
 
 [![Build Status](https://travis-ci.org/chanhpark/vent.it.svg)](https://travis-ci.org/chanhpark/vent.it)
@@ -6,6 +6,8 @@
 [![Coverage Status](https://coveralls.io/repos/chanhpark/vent.it/badge.png?branch=master)](https://coveralls.io/r/chanhpark/vent.it?branch=master)
 
 Vent.it is an App where people can come and vent and get things off their chest. It was my Breakable Toy for the last week of Launch Academy.
+
+Give Vent.it a try at : http://ventit.herokuapp.com
 
 Here are some screenshots of Vent.it
 
@@ -15,6 +17,28 @@ D3 Visualization
 ![alt tag](data.png)
 Admin Page
 ![alt tag](admin.png)
+
+You can also try this locally on your machine.
+
+```
+git clone git@github.com:chanhpark/vent.it.git
+rake db:create
+rake db:migrate
+rake db:seed (for categories)
+```
+You will have a blank database so you can go ahead and get people venting!
+
+**Features**
+- people are allowed to vent without signing in
+- inorder to comment on a vent or like/dislike a vent user must be signed in
+- word counter when a vent gets posted
+- d3 visualization used with the word counter
+- admin panel to have the admin delete/edit any vents
+- users can search for specific vents
+- there are 5 random vents that populate on the index page as it refreshes
+- categories to see only certain topics
+
+In case you didnt want to go through all my commit history: Below is a day breakdown of my work done with features to come and what I can improve.
 
 **Jan 10th, 2015**
   - The initial commit
@@ -91,9 +115,10 @@ Admin Page
    - refactored code
    - banner is responsive
    - truncated user email on nav
-
+   - 
 **Things to do:**
 - optimize the json reader with D3 so load time of visualization is faster
 - style the application more
 - Ajax to update the votes rather than refreshing the whole page
 - add twitter authentication - so people can be able to vent the tweet straight to their twitter page
+
