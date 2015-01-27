@@ -9,6 +9,15 @@ Vent.it is an App where people can come and vent and get things off their chest.
 
 Give Vent.it a try at : http://ventit.herokuapp.com
 
+Here are some screenshots of Vent.it
+
+Home Page
+![alt tag](home.png)
+D3 Visualization
+![alt tag](data.png)
+Admin Page
+![alt tag](admin.png)
+
 You can also try this locally on your machine.
 
 ```
@@ -98,19 +107,9 @@ In case you didnt want to go through all my commit history: Below is a day break
    - refactored code
    - banner is responsive
    - truncated user email on nav
-
-**Things to do:**
+##Things to do:
 - optimize the json reader with D3 so load time of visualization is faster
 - style the application more
 - Ajax to update the votes rather than refreshing the whole page
 - add twitter authentication - so people can be able to vent the tweet straight to their twitter page
 
-
-Here are some screenshots of Vent.it
-
-Home Page
-![alt tag](home.png)
-D3 Visualization
-![alt tag](data.png)
-Admin Page
-![alt tag](admin.png)
