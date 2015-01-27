@@ -28,9 +28,17 @@ rake db:seed (for categories)
 ```
 You will have a blank database so you can go ahead and get people venting!
 
+**Features**
+- people are allowed to vent without signing in
+- inorder to comment on a vent or like/dislike a vent user must be signed in
+- word counter when a vent gets posted
+- d3 visualization used with the word counter
+- admin panel to have the admin delete/edit any vents
+- users can search for specific vents
+- there are 5 random vents that populate on the index page as it refreshes
+- categories to see only certain topics
 
 In case you didnt want to go through all my commit history: Below is a day breakdown of my work done with features to come and what I can improve.
-
 
 **Jan 10th, 2015**
   - The initial commit
@@ -107,7 +115,8 @@ In case you didnt want to go through all my commit history: Below is a day break
    - refactored code
    - banner is responsive
    - truncated user email on nav
-##Things to do:
+   - 
+**Things to do:**
 - optimize the json reader with D3 so load time of visualization is faster
 - style the application more
 - Ajax to update the votes rather than refreshing the whole page
