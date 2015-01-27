@@ -40,6 +40,8 @@ You will have a blank database so you can go ahead and get people venting!
 
 In case you didnt want to go through all my commit history: Below is a day breakdown of my work done with features to come and what I can improve.
 
+![alt tag](er.png)
+
 **Jan 10th, 2015**
   - The initial commit
   - started the rails app and added travis, coveralls, badges to start with testing.
@@ -115,10 +117,9 @@ In case you didnt want to go through all my commit history: Below is a day break
    - refactored code
    - banner is responsive
    - truncated user email on nav
-   - 
+   -
 **Things to do:**
 - optimize the json reader with D3 so load time of visualization is faster
 - style the application more
 - Ajax to update the votes rather than refreshing the whole page
 - add twitter authentication - so people can be able to vent the tweet straight to their twitter page
-
