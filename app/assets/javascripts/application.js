@@ -16,6 +16,7 @@
 //= require d3.v3.min
 //= require bubble
 //= require analytics
+//= require ajax_pagetracker
 //= require_tree .
 
 $(function(){ $(document).foundation(); });
