@@ -15,6 +15,7 @@
 //= require foundation
 //= require d3.v3.min
 //= require bubble
+//= require analytics
 //= require_tree .
 
 $(function(){ $(document).foundation(); });
