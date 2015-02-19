@@ -2,6 +2,8 @@ class Word < ActiveRecord::Base
   has_many :word_counts
   validates :word, presence: true, uniqueness: true
 
+
+#d3 json
   def count
     total = 0
     word_counts.each do |value|
